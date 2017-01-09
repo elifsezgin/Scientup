@@ -1,4 +1,4 @@
-# LinkUp: A MeetUp Clone
+# ScientUp: A MeetUp Clone
 
 
 
