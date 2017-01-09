@@ -1,11 +1,5 @@
 # LinkUp: A MeetUp Clone
 
-[LinkUp Link](https://linkupapplication.herokuapp.com/)
-
-[Trello Link](https://trello.com/b/xCICumPK/linkup)
-
-[MeetUp Link](https://www.meetup.com/)
-
 
 
 ## Minimum Viable Product
