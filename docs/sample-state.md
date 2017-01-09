@@ -1,3 +1,4 @@
+```js
 {
   currentUser: {
     id: 1,
@@ -37,16 +38,16 @@
       title: "Let's code!",
       group_id: 1,
       description: "Event for coding as a group",
-      date: 19th Jan 2017,
+      date: 19:01:2017,
       time: 19:00
     },
     2: {
       title: "Code challenge",
       group_id: 2,
       description: "is fun",
-      date: 19th Feb 2017,
+      date: 19:02:2017,
       time: 19:00
     }
   }
-  tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of groups
-}
+  tagFilters: [1, 7, 14] 
+```
