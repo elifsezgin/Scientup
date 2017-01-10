@@ -35,6 +35,24 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 
+## memberships
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null
+group_id    | integer   | not null
+
+
+## events_joined
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null
+event_id    | integer   | not null
+
+
 ## taggings
 column name | data type | details
 ------------|-----------|-----------------------

@@ -1,6 +1,5 @@
 ## Component Hierarchy
 
-
 **AuthFormContainer**
  - AuthForm
 
@@ -16,13 +15,13 @@
  - GroupsHeader
   * GroupIndex
     - GroupIndexItem
-     + GroupNavbar
-     + GroupDetail
-       * EventContainer
-       * TagContainer
+
+**GroupDetailContainer**
+  + GroupNavbar
+  * EventContainer
+  * TagContainer
 
 **EventContainer**
- - EventHeader
   + EventIndex
     - EventIndexItem
       - EventDetail
@@ -50,11 +49,10 @@
 | "/sign-up"                                | "AuthFormContainer" |
 | "/sign-in"                                | "AuthFormContainer" |
 | "/home"                                   | "HomeContainer" |
-| "/home/groups"                            | "GroupsContainer" |
+<!-- | "/home/groups"                            | "GroupsContainer" | -->
 | "/home/groups/:groupId"                   | "GroupsDetail" |
 | "/home/groups/:groupId/events"            | "EventsContainer" |
 | "/home/groups/:groupId/events/:eventId"   | "EventDetail" |
-| "/home/group-search-results"              | "SearchResultsContainer"
 | "/new-group"                              | "NewGroupContainer" |
 | "/new-event"                              | "NewNotebook" |
 | "/search/groups"                          | "GroupSearchContainer" |
