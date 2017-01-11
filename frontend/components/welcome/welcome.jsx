@@ -10,8 +10,9 @@ class Welcome extends React.Component {
     return(
       <div>
         <Link to="/welcome/login">Login</Link>
-        <Link to="/welcome/signup">Signup</Link>
+        <Link to="/welcome/signup">Sign up</Link>
         {this.props.children}
+
       </div>
     );
   }
