@@ -40,8 +40,8 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null
-group_id    | integer   | not null
+user_id     | integer   | not null, indexed
+group_id    | integer   | not null, indexed
 
 
 ## events_joined
@@ -49,8 +49,8 @@ group_id    | integer   | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null
-event_id    | integer   | not null
+user_id     | integer   | not null, indexed
+event_id    | integer   | not null, indexed
 
 
 ## taggings
