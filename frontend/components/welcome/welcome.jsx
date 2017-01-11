@@ -11,6 +11,7 @@ class Welcome extends React.Component {
       <div>
         <Link to="/welcome/login">Login</Link>
         <Link to="/welcome/signup">Signup</Link>
+        {this.props.children}
       </div>
     );
   }
