@@ -14,5 +14,5 @@
 class Group < ActiveRecord::Base
   validates :title, :description, :city_name, presence: true
   validates :title, uniqueness: true
-  
+
 end

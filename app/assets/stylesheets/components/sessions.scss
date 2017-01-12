@@ -12,6 +12,7 @@ body {
 }
 
 .auth-form {
+  opacity: 0.9;
   position:relative;
   width:360px;
   height:300px;
@@ -67,6 +68,9 @@ li {
   list-style:none;
 }
 
+.auth-form-errors {
+  margin-bottom:5px;
+}
 
 .auth-form-button {
   position:relative;

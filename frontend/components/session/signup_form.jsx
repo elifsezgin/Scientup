@@ -26,9 +26,17 @@ class signupForm extends React.Component {
 
 
   render() {
+// TODO: add errors under the auth-form-errors
+    // const errors = [];
+    // {this.props.errors.map((error, idx) => (
+    //   <li key={idx}>{error}</li>
+    // ))};
 
     return(<form className='auth-form'>
       <h4> Signup Information </h4>
+      <div className='auth-form-errors'>
+
+      </div>
       <input className="username"
              type="text"
              value={this.state.username}
