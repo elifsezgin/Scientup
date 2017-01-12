@@ -6,17 +6,22 @@ class Header extends React.Component {
     super(props);
 
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleLogout (e) {
     this.props.logout();
   }
 
+  handleDemo (e) {
+    this.props.login({user: {username: 'Elif', password: 'password'}});
+  }
+
 
   render() {
     const loginLink = (<Link to='/welcome/login'>Log in</Link>);
     const signupLink = (<Link to='/welcome/signup'>Sign up</Link>);
-    const demoLink = (<Link to='/welcome/demo'>Demo</Link>);
+    const demoLink = (<Link to='/home' onClick={this.handleDemo}>Demo</Link>);
     const logoutLink = (<Link to='/welcome' onClick={this.handleLogout}>Log out</Link>);
 
     const links = ( (this.props.currentUser) ? [logoutLink] : [demoLink, loginLink, signupLink] );

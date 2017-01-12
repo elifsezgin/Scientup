@@ -15,8 +15,9 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
-location    | string    | not null
-organizer_id| integer   | not null, foreign key (references users), indexed
+city_name   | string    | not null
+image_url   | string    |
+<!-- organizer_id| integer   | not null, foreign key (references users), indexed -->
 
 
 ## events
@@ -36,6 +37,14 @@ id          | integer   | not null, primary key
 name        | string    | not null
 
 ## memberships
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, indexed
+group_id    | integer   | not null, indexed
+
+## organizers
 
 column name | data type | details
 ------------|-----------|-----------------------
