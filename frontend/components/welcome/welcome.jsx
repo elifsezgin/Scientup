@@ -24,5 +24,4 @@ class Welcome extends React.Component {
   }
 }
 
-// <iframe src="https://player.vimeo.com/video/146599806?title=0&byline=0&portrait=0" width="640" height="268" frameBorder="0"  allowFullScreen></iframe>
 export default Welcome;

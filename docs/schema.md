@@ -19,6 +19,21 @@ city_name   | string    | not null
 image_url   | string    |
 <!-- organizer_id| integer   | not null, foreign key (references users), indexed -->
 
+## memberships
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, indexed
+group_id    | integer   | not null, indexed
+
+## organizers
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, indexed
+group_id    | integer   | not null, indexed
 
 ## events
 column name | data type | details
@@ -36,21 +51,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 
-## memberships
-
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, indexed
-group_id    | integer   | not null, indexed
-
-## organizers
-
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, indexed
-group_id    | integer   | not null, indexed
 
 
 ## events_joined

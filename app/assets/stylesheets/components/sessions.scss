@@ -21,7 +21,7 @@ body {
   width:360px;
   margin:50px auto;
   text-align:center;
-  background: #EDE5E2;
+  background: $light-gray;
   padding:40px;
   // -webkit-border-radius:20px 0 0 0;
   //    -moz-border-radius:20px 0 0 0;
@@ -31,14 +31,14 @@ body {
   box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;
   box-shadow: 20px 20px 20px;
   ::-webkit-input-placeholder {
-    color: #bdb7b4;
+    color: $gray;
   }
   h4 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size:2em;
     font-weight:300;
     margin-bottom:25px;
-    color:#a5a09e;
+    color:$dark-gray;
     text-shadow:1px 1px 0px white;
   }
 }
@@ -53,7 +53,7 @@ body {
   border-radius:6px;
   border:0;
   margin-bottom:12px;
-  color:#bdb7b4;
+  color:$gray;
   font-weight:600;
   font-size:16px;
 }
@@ -64,7 +64,7 @@ body {
 }
 
 .login-link {
-  color:#a5a09e;
+  color:$dark-gray;
   font-weight:600;
   font-size:16px;
 
@@ -102,7 +102,7 @@ input:focus {
   float:left;
   width:145px;
   margin-top:10px;
-  background:#61D2D6;
+  background-color: $blue;
   color:#fff;
   font-weight:400;
   text-shadow:1px 1px 0px #b0e8ea;

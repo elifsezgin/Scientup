@@ -3,7 +3,7 @@ header {
 
 .header-container {
   height: 90px;
-  background-color: #EDE5E2;
+  background-color: $light-gray;
   font-family: serif;
   display: flex;
   justify-content: space-between;
@@ -21,6 +21,10 @@ header {
   margin-left: 20px;
 }
 
+.welcome-message {
+  color: $orange;
+}
+
 .header-list {
 
   margin-top: 8px;
@@ -35,7 +39,7 @@ header {
   margin-right: 20px;
   width: 100px;
   height: 50px;
-  background-color: #61D2D6;
+  background-color: $blue;
   padding: 10px;
   border-radius: 6px;
   border: 0;
@@ -43,12 +47,17 @@ header {
   margin-top: 10px;
   font-size: 16px;
   font-weight: 400;
-  text-shadow:1px 1px 0px #b0e8ea;
-  box-shadow:0px 3px 0px #b0e8ea;
+  text-shadow:1px 1px 0px $light-blue;
+  box-shadow:0px 3px 0px $light-blue;
   transition: all .3s ease-in-out;
+  color: $white;
   a, a:visited {
+    color: $white;
     text-decoration:none;
-    color: white;
     font-weight:400;
+  }
+
+  :hover {
+    cursor: pointer;
   }
 }
