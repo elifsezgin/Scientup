@@ -1,5 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import {Link} from 'react-router';
 
 class signupForm extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class signupForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,38 +26,47 @@ class signupForm extends React.Component {
   return e => this.setState({ [property]: e.target.value });
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return (
+        <ul className='auth-errors'>
+          {this.props.errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+          ))}
+        </ul>
+      );
+    }
+    return null;
+  }
 
   render() {
-// TODO: add errors under the auth-form-errors
-    // const errors = [];
-    // {this.props.errors.map((error, idx) => (
-    //   <li key={idx}>{error}</li>
-    // ))};
 
     return(<form className='auth-form'>
       <h4> Signup Information </h4>
-      <div className='auth-form-errors'>
-
-      </div>
-      <input className="username"
-             type="text"
-             value={this.state.username}
-             placeholder="Enter Username"
-             onChange={this.update('username')}/>
-      <input className="email"
-             type="text"
-             value={this.state.email}
-             placeholder="Enter Email"
-             onChange={this.update('email')}/>
-      <input className="pw"
-             type="password"
-             value={this.state.password}
-             placeholder="Enter Password"
-             onChange={this.update('password')}/>
-      <input className="auth-form-button"
-             type="submit"
-             value='Sign up'
-             onClick={this.handleSubmit}/>
+      {this.renderErrors()}
+        <input className="username"
+               type="text"
+               value={this.state.username}
+               placeholder="Enter Username"
+               onChange={this.update('username')}/>
+        <input className="email"
+               type="text"
+               value={this.state.email}
+               placeholder="Enter Email"
+               onChange={this.update('email')}/>
+        <input className="pw"
+               type="password"
+               value={this.state.password}
+               placeholder="Enter Password"
+               onChange={this.update('password')}/>
+        <input className="auth-form-button"
+               type="submit"
+               value='Sign up'
+               onClick={this.handleSubmit}/>
+             <br/>
+         <p className='login-link'>Already a member?
+           <br/>
+           <Link to='/welcome/login'>Log in</Link></p>
       <br/><br/>
     </form>);
   }

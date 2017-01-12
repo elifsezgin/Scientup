@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
 class loginForm extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class loginForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,11 +25,24 @@ class loginForm extends React.Component {
    return e => this.setState({ [property]: e.target.value });
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return (
+        <ul className='auth-errors'>
+          {this.props.errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
   render() {
 
     return(
       <form className='auth-form'>
         <h4> Login Information </h4>
+        {this.renderErrors()}
         <input className="email"
                type="text"
                value={this.state.username}
@@ -43,10 +57,14 @@ class loginForm extends React.Component {
                type="submit"
                onClick={this.handleSubmit}
                value="Log in"/>
+               <br/>
+           <p className='login-link'>Not registered yet?
+             <br/>
+             <Link to='/welcome/signup'>Sign up</Link></p>
         <br/><br/>
     </form>);
   }
 }
 // <li><a href="#">Forgot your password?</a></li>
 
-export default loginForm;
+export default withRouter(loginForm);

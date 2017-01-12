@@ -1,6 +1,8 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +14,11 @@ body {
 }
 
 .auth-form {
+  min-height: 300px;
+  max-height: 400px;
   opacity: 0.9;
   position:relative;
   width:360px;
-  height:300px;
   margin:50px auto;
   text-align:center;
   background: #EDE5E2;
@@ -55,24 +58,46 @@ body {
   font-size:16px;
 }
 
+.signup-login-container {
+  display: inline;
+  flex-direction: column;
+}
+
+.login-link {
+  color:#a5a09e;
+  font-weight:600;
+  font-size:16px;
+
+}
 
 input:focus {
   background:#fafafa;
 }
 
 
-li {
-  position:absolute;
-  right:40px;
-  bottom:62px;
-  list-style:none;
-}
+// li {
+//   position:absolute;
+//   right:40px;
+//   bottom:62px;
+//   list-style:none;
+// }
 
-.auth-form-errors {
-  margin-bottom:5px;
+
+.auth-errors {
+  // margin: 10px 0px;
+  padding:12px;
+  color: #D8000C;
+  // background-color: #FFBABA;
+  // color: red;
+  // margin-left: 10px;
+  // margin-bottom:5px;
+  // list-style:circle;
+  vertical-align:middle;
+  margin:10px 22px;
 }
 
 .auth-form-button {
+  display: inline-block;
   position:relative;
   float:left;
   width:145px;
