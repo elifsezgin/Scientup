@@ -1,6 +1,8 @@
 # ScientUp: A MeetUp Clone
 
+Check out the live version [here][heroku]!
 
+[heroku]: http://scientup.herokuapp.com
 
 ## Minimum Viable Product
 
@@ -54,5 +56,5 @@ Scientup is a web application inspired by Meetup built using Ruby on Rails on th
   - Bonus: Map (on search results page)
   - Bonus: Categories
   - Bonus: Calendar (for all groups in search results)
-  
+
 **Objective:** Any additional bonus features

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import HeaderContainer from '../header/header_container';
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -9,10 +10,15 @@ class Welcome extends React.Component {
   render() {
     return(
       <div>
-        <Link to="/welcome/login">Login</Link>
-        <Link to="/welcome/signup">Sign up</Link>
+        <HeaderContainer />
+        <div className="welcome-video">
+          <iframe autoPlay src="https://player.vimeo.com/video/146599806?title=0&byline=0&portrait=0" width="640" height="268" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <video autoPlay muted >
+          <source src="https://player.vimeo.com/video/146599806?title=0&byline=0&portrait=0" type="video/mp4" />
+          Could not find video.
+        </video>
+        </div>
         {this.props.children}
-
       </div>
     );
   }

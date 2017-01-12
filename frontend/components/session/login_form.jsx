@@ -27,7 +27,7 @@ class loginForm extends React.Component {
   render() {
 
     return(
-      <form className='login-form'>
+      <form className='auth-form'>
         <h4> Login Information </h4>
         <input className="email"
                type="text"

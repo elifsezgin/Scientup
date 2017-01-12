@@ -27,7 +27,7 @@ class signupForm extends React.Component {
 
   render() {
 
-    return(<form>
+    return(<form className='auth-form'>
       <h4> Signup Information </h4>
       <input className="username"
              type="text"
