@@ -8,5 +8,5 @@ export const receiveGroups = (groups) => ({
 });
 
 export const requestAllGroups = () => dispatch => (
-  GroupsAPIUtil.allGroups().then(groups => dispatch(receiveGroups)(groups))
+  GroupsAPIUtil.allGroups().then(groups => dispatch(receiveGroups(groups)))
 );
