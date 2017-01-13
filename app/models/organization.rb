@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: organizers
+# Table name: organizations
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer          not null
@@ -9,5 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-class Organizer < ActiveRecord::Base
+class Organization < ActiveRecord::Base
+  validates :user_id, :group_id, presence: true
+  validates :user_id, uniqueness: { scope: :group_id }
+
+  belongs_to :group
+  belongs_to :user
 end

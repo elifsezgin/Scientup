@@ -15,4 +15,11 @@ class Group < ActiveRecord::Base
   validates :title, :description, :city_name, presence: true
   validates :title, uniqueness: true
 
+  has_many :organizations
+  has_many :memberships
+
+  has_many :organizers, through: :organizations, source: :user
+  has_many :members, through: :memberships
+
+
 end

@@ -13,12 +13,16 @@ class loginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount() {
+    // TODO: add clear errors
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     console.log(this.props);
     this.props.login({ user }).then(()=>
-    this.props.router.push('/'));
+      this.props.router.push('/'));
   }
 
   update(property) {

@@ -1,38 +1,60 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "app-academy"
-  },
+  session: {
+    currentUser: {
+      id: 1,
+      username: "app-academy"
+    },
+    errors: []
+  }
   forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
     createGroup: {errors: ["location can't be blank"]},
     createEvent: {errors: []}
   },
   groups: {
     1: {
-      name: "Ruby Developers",
-      location: "San Francisco",
-      organizer_id: 1,
-      members: {
-        1: {
-          id: 1,
-          username: "app-academy"
-        },
-        2: {
-          id: 2,
-          username: "elif"
-        }
+      id: 1,
+      title: "Ruby Developers",
+      image_url: '',
+      member_count: 145234
+    }
+    2: {
+      id: 2,
+      title: "Genetics Lovers",
+      image_url: '',
+      member_count: 1452
+    },
+    ...
+  }
+  group_detail: {
+    title: "Ruby Developers",
+    description: 'Cool people'
+    city_name: "San Francisco",
+    image_url: '',
+    organizers: [
+      1: {
+        id: 1,
+        username: "app-academy"
       }
-      tags: {
-        1: {
-          id: 1
-          name: "Coding"
-        }
+    ],
+    members: {
+      1: {
+        id: 1,
+        username: "app-academy"
+      },
+      2: {
+        id: 2,
+        username: "elif"
+      }
+    }
+    tags: {
+      1: {
+        id: 1
+        name: "Coding"
       }
     }
   },
+
   events: {
     1: {
       title: "Let's code!",
@@ -49,5 +71,5 @@
       time: 19:00
     }
   }
-  tagFilters: [1, 7, 14] 
+  tagFilters: [1, 7, 14]
 ```
