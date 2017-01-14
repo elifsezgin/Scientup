@@ -6,6 +6,7 @@ import WelcomeContainer from './welcome/welcome_container';
 import HomeContainer from './home/home_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import GroupDetailContainer from './groups/group_detail_container';
 
 const Root = ({store}) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -34,6 +35,9 @@ const Root = ({store}) => {
           <Route path='home'
             component={ HomeContainer }
             onEnter={_ensureLoggedIn} />
+          <Route path='groups/:groupId' component={ GroupDetailContainer }>
+
+          </Route>
         </Route>
       </Router>
     </Provider>

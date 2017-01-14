@@ -12,12 +12,7 @@ class Welcome extends React.Component {
     return(
       <div>
         <HeaderContainer />
-        <div>
-        <video className="welcome-video" autoPlay muted loop>
-          <source src="http://res.cloudinary.com/datsbxfvs/video/upload/v1484242056/welcome_video_gpslvo.mp4" type="video/mp4" />
-          Could not find video.
-        </video>
-        </div>
+        
         {this.props.children}
       </div>
     );

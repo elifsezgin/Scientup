@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Group.create(title: 'Evolutionists', description: 'Meet other local evolutionists to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484352068/Unknown_bhzijt.png")
+
+Group.create(title: 'Data Scientists', description: 'Meet other local data scientists to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484352124/Unknown-3_gtowm6.jpg")
+
+Group.create(title: 'Physicists', description: 'Meet other local physicists to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484352214/images_ihqfsv.jpg")
+
+Group.create(title: 'Mathematicians', description: 'Meet other local mathematicians to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484352296/mathematics_w0u4un.jpg")
+
+Group.create(title: 'Chemists', description: 'Meet other local chemists to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484353447/Unknown-5_jzila0.jpg")

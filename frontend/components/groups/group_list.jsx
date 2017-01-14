@@ -5,26 +5,21 @@ import GroupListItem from './group_list_item';
 class GroupList extends React.Component {
   constructor(props) {
     super(props);
-    this.test = this.test.bind(this);
   }
 
   componentDidMount () {
     this.props.requestAllGroups();
   }
 
-  test() {
-  }
-
 
   render () {
     window.props = this.props;
     const groups = this.props.groups.map(data => (
-      <GroupListItem key={data.id} title={data.title} image_url={data.image_url} />
+      <GroupListItem key={data.id} title={data.title} imageUrl={data.image_url} groupId={data.id} />
       )
     );
     return (
-      <div>
-        <h1>THIS IS GROUPS</h1>
+      <div className="group-list">
         {groups}
         {this.props.children}
       </div>

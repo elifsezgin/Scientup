@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
+import MainHeader from './main_header';
 
 class Header extends React.Component {
   constructor(props) {
@@ -43,15 +44,18 @@ class Header extends React.Component {
     const links = ( (this.props.currentUser) ? [logoutLink] : [demoLink, loginLink, signupLink] );
 
   return(
-    <header className='header-container'>
-      <img className='logo' src={window.assets.logo}></img>
-      {this.welcomeMessage()}
-      <ul className='header-list'>
-      {links.map((link, idx) => (
-        <button key={idx} className='header-buttons'>{link}</button>
-      ))}
-      </ul>
-    </header>
+    <div>
+      <header className='header-container'>
+        <img className='logo' src={window.assets.logo}></img>
+        {this.welcomeMessage()}
+        <ul className='header-list'>
+        {links.map((link, idx) => (
+          <button key={idx} className='header-buttons'>{link}</button>
+        ))}
+        </ul>
+      </header>
+      <MainHeader userLoggedIn={!!this.props.currentUser} />
+    </div>
   );
 
   }

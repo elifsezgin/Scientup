@@ -1,3 +1,5 @@
 import { values } from 'lodash';
 
-export const selectAllGroups = ({ groups }) => values(groups);
+export const selectAllGroups = ({ groups }) => {
+  return (values(groups));
+};

@@ -32,7 +32,6 @@ header {
   margin-right: 20px;
 }
 
-
 .header-buttons {
   display: block;
   position: relative;
@@ -60,4 +59,25 @@ header {
   :hover {
     cursor: pointer;
   }
+}
+
+.welcome-video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.home-background {
+  height: 150px;
+  background-color: $orange;
+  color: $white;
+  text-align: center;
+  padding: 50px;
+
 }

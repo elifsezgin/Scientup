@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {signup, logout} from './actions/session_actions';
+import {requestGroup} from './util/groups_api_util';
+import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -12,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
+  window.store = store;
+  window.requestGroup = requestGroup;
+  Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
