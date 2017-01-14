@@ -8,6 +8,7 @@ const GroupListItem = ({ title, imageUrl, groupId }) => {
   let groupItemStyle = {
     width: "300px",
     height: "200px",
+    filter: "brightness(90%)",
     backgroundImage: `url(${imageUrl})`
   };
   return (
@@ -19,5 +20,4 @@ const GroupListItem = ({ title, imageUrl, groupId }) => {
   );
 };
 
-// <img className='group-image' src={window.assets.logo}/>
 export default GroupListItem;

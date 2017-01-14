@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
-import MainHeader from './main_header';
 
 class Header extends React.Component {
   constructor(props) {
@@ -54,7 +53,6 @@ class Header extends React.Component {
         ))}
         </ul>
       </header>
-      <MainHeader userLoggedIn={!!this.props.currentUser} />
     </div>
   );
 
