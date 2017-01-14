@@ -21,11 +21,34 @@ class GroupDetail extends React.Component {
           <div className='group-header'>
               <h1>{group.title}</h1>
             <ul className='group-navbar'>
-              <li><Link to={`groups/${this.props.params.groupId}`}>Home</Link></li>
+              <li><Link to={`groups/${this.props.params.groupId}`} className='group-navbar-item'>Home</Link></li>
+              <li><a href='#' className='group-navbar-item'>Members</a></li>
             </ul>
           </div>
 
-          <h1>THIS IS GROUP DETAIL FOR {group.title} </h1>
+          <div className='group-content'>
+            <div className='group-info'>
+              <img src={group.image_url}></img>
+              <p className='group-city-name'>{group.city_name}</p>
+              <p className='created-at'>{Date(group.created_at)}</p>
+              <p className='group-info-items'>
+                <p>Members:</p>
+                <p>10</p>
+              </p>
+              <p className='group-info-items'>
+                <p>Upcoming Scientups:</p>
+                <p>12</p>
+              </p>
+              <p className='group-info-items'>
+                <p>Past Scientups:</p>
+                <p>42</p>
+              </p>
+            </div>
+            <div className='group-detail'>
+              <p>{group.description}</p>
+            </div>
+
+          </div>
         </div>
         {this.props.children}
       </div>

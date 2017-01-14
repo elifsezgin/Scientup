@@ -1,6 +1,11 @@
 class Api::GroupsController < ApplicationController
   def create
-
+    @group = Group.new(group_params)
+    if @group.save
+      render 'api/groups/show.json.jbuilder'
+    else
+      render json: @group.errors.fullmessages, status: 422
+    end
   end
 
   def update

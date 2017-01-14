@@ -45,7 +45,7 @@ class Header extends React.Component {
   return(
     <div>
       <header className='header-container'>
-        <img className='logo' src={window.assets.logo}></img>
+        <Link to="/home"><img className='logo' src={window.assets.logo}></img></Link>
         {this.welcomeMessage()}
         <ul className='header-list'>
         {links.map((link, idx) => (

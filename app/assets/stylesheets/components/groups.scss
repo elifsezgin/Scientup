@@ -1,0 +1,145 @@
+.group-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 100px;
+}
+
+.group-item {
+  height: 200px;
+  width: 300px;
+  list-style: none;
+  margin: 20px;
+
+  h3 {
+    position: relative;
+    top: 50px;
+    left: 30px;
+    color: $white;
+
+    filter: none;
+    text-decoration: none;;
+  }
+
+}
+
+.group-item:hover {
+  opacity: 0.5;
+}
+
+.group-detail-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.group-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  margin-top: 20px;
+  height: 180px;
+  width: 960px;
+  background-color: $orange-background;
+  border-radius: 10px;
+
+  h1 {
+    color: $white;
+    margin-bottom: 20px;
+  }
+
+}
+.group-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 0px;
+  height: 20px;
+  border: 1px solid $dark-gray;
+  border-top: 15px solid $dark-gray;
+  background-color: $light-gray;
+  list-style: none;
+  padding: 20px;
+}
+
+.group-navbar-item {
+  // margin-left: 10px;
+  padding: 10px;
+  color: $dark-gray;
+  text-decoration: none;
+}
+
+.group-navbar-item:hover {
+  color: $white;
+  background-color: $blue;
+  border-radius: 10px;
+}
+
+.group-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.group-info {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $dark-gray;
+  background-color: $light-gray;
+  padding: 20px;
+  width: 260px;
+  margin-right: 20px;
+  border-radius: 10px;
+  img {
+    width: 260px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+}
+.group-city-name {
+  color: $purple;
+  font-weight: 300;
+  margin: 5px;
+  margin-bottom: 0;
+}
+
+.group-city-name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.created-at {
+  color: $dark-gray;
+  font-weight: 200;
+  margin: 5px;
+  margin-top: 0;
+}
+.group-info-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 300;
+  color: $dark-gray;
+  margin: 5px;
+}
+
+.group-info-items:hover {
+  cursor: pointer;
+  color: inherit;
+}
+
+
+.group-detail {
+  padding: 20px;
+  width: 600px;
+  border: 1px solid $dark-gray;
+  background-color: $light-gray;
+  border-radius: 10px;
+}

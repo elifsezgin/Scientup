@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Group.create(title: "Computer Scientists", description: "Meet other local computer scientists to discuss the latest news and theories.", city_name: "San Francisco", image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484353544/compsc_n2ryhb.png")
+
 
 Group.create(title: 'Evolutionists', description: 'Meet other local evolutionists to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484352068/Unknown_bhzijt.png")
 
