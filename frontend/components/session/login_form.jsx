@@ -13,16 +13,15 @@ class loginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentDidMount() {
-    // TODO: add clear errors
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    console.log(this.props);
     this.props.login({ user }).then(()=>
       this.props.router.push('/'));
+  }
+
+  componentDidMount () {
+    this.props.clearErrors();
   }
 
   update(property) {
@@ -61,14 +60,9 @@ class loginForm extends React.Component {
                type="submit"
                onClick={this.handleSubmit}
                value="Log in"/>
-               <br/>
-           <p className='login-link'>Not registered yet?
-             <br/>
-             <Link to='/welcome/signup'>Sign up</Link></p>
-        <br/><br/>
+         <br/>
     </form>);
   }
 }
-// <li><a href="#">Forgot your password?</a></li>
 
 export default withRouter(loginForm);

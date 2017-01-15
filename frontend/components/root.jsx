@@ -7,6 +7,7 @@ import HomeContainer from './home/home_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GroupDetailContainer from './groups/group_detail_container';
+import NewGroupContainer from './groups/new_group_container';
 
 const Root = ({store}) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -28,16 +29,22 @@ const Root = ({store}) => {
       <Router history={hashHistory} >
         <Route path="/" component={App}>
           <IndexRedirect to='/home' />
-          <Route path='welcome' component={ WelcomeContainer } onEnter={_redirectIfLoggedIn} >
-            <Route path='login' component={ LoginFormContainer } onEnter={_redirectIfLoggedIn}  />
-            <Route path='signup' component={ SignupFormContainer } onEnter={_redirectIfLoggedIn} />
+          <Route
+            path='welcome'
+            component={ WelcomeContainer }
+            onEnter={_redirectIfLoggedIn} >
           </Route>
-          <Route path='home'
+          <Route
+            path='home'
             component={ HomeContainer }
             onEnter={_ensureLoggedIn} />
-          <Route path='groups/:groupId' component={ GroupDetailContainer }>
+          <Route
+            path='groups/new'
+            component={ NewGroupContainer } />
+          <Route
+            path='groups/:groupId'
+            component={ GroupDetailContainer } />
 
-          </Route>
         </Route>
       </Router>
     </Provider>

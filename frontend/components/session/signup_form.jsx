@@ -15,6 +15,10 @@ class signupForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount () {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -25,10 +29,6 @@ class signupForm extends React.Component {
 
   update(property) {
   return e => this.setState({ [property]: e.target.value });
-  }
-
-  componentDidMount() {
-    // TODO: add clear errors
   }
 
   renderErrors() {
@@ -68,11 +68,10 @@ class signupForm extends React.Component {
                type="submit"
                value='Sign up'
                onClick={this.handleSubmit}/>
-             <br/>
-         <p className='login-link'>Already a member?
-           <br/>
-           <Link to='/welcome/login'>Log in</Link></p>
-      <br/><br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </form>);
   }
 }
