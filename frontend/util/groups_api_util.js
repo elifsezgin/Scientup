@@ -20,6 +20,28 @@ export const createGroup = (group) => (
   })
 );
 
+export const deleteGroup = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/groups/${id}`
+  })
+);
+
+export const addMember = (data) => (
+  $.ajax({
+    method: 'POST',
+    url: `api/memberships/`,
+    data: data
+  })
+);
+
+export const deleteMember = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/memberships/${id}`
+  })
+);
+
 export const getLocation = (lat, lon) => (
   $.ajax({
     method: 'GET',

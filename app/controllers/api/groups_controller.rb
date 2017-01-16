@@ -19,11 +19,13 @@ class Api::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-
     render 'api/groups/show.json.jbuilder'
   end
 
   def destroy
+    @group = Group.find(params[:id])
+    @group.delete
+    render 'api/groups/index.json.jbuilder'
   end
 
   private

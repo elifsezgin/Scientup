@@ -33,9 +33,7 @@ class Welcome extends React.Component {
       lon: position.coords.longitude
     });
     this.props.getLocation(this.state.lat, this.state.lon);
-
-    console.log( "Latitude: " + position.coords.latitude +
-    "Longitude: " + position.coords.longitude);
+    this.props.getLocation(this.state.lat, this.state.lon);
   }
 
 

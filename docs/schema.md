@@ -45,14 +45,6 @@ description | text      | not null
 date        | date      | not null
 time        | time      | not null
 
-## tags
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-
-
-
 ## events_joined
 
 column name | data type | details
@@ -60,6 +52,15 @@ column name | data type | details
 id          | integer   | not null, primary key
 user_id     | integer   | not null, indexed
 event_id    | integer   | not null, indexed
+
+
+## tags
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null
+
+
 
 
 ## taggings

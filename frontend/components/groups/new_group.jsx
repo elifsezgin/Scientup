@@ -17,6 +17,8 @@ class NewGroup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.updateImage = this.updateImage.bind(this);
+    this.cloudinate = this.cloudinate.bind(this);
   }
 
   componentDidMount () {
@@ -27,12 +29,36 @@ class NewGroup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const group = Object.assign({}, this.state);
+    if (this.state.image_url) {
+      this.props.addImage(this.state.newImage);
+    }
     this.props.createGroup({ group }).then((data)=>
       this.props.router.push(`groups/${data.id}`));
   }
 
   update(property) {
    return e => this.setState({ [property]: e.target.value });
+  }
+
+  updateImage(event) {
+    this.setState({image_url: event.target.value});
+  }
+
+  cloudinate(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      {
+        cloud_name: 'XXXXXXX',
+        upload_preset: 'XXXXXXX',
+        theme: 'minimal',
+      },
+      (errors, imageInfo) => {
+        if (errors === null) {
+          let image_url = imageInfo[0].url;
+          console.log(imageInfo);
+        }
+      }
+    );
   }
 
   renderErrors() {
@@ -46,7 +72,6 @@ class NewGroup extends React.Component {
     }
     return(errors);
   }
-
 
   render () {
     window.props = this.props;
@@ -85,6 +110,15 @@ class NewGroup extends React.Component {
                      value={this.state.description}
                      placeholder="Your description here"
                      onChange={this.update('description')}></textarea>
+                   <h6>FOURTH STEP</h6>
+           <label className='group-creation-labels'>
+             <i className="fa fa-camera icons" aria-hidden="true"></i>
+             Upload a photo for your Scientup Group. (You can upload anytime you want)</label>
+            <input className="group-creation-input"
+                type="text"
+                value={this.state.image_url}
+                placeholder="Copy & Paste image url or Drag & Drop the image."
+                onChange={this.updateImage} />
 
             <input className="group-creation-button"
                    type="submit"

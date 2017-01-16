@@ -52,6 +52,14 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def is_member?(group)
+    self.groups_joined.include(group)
+  end
+
+  def is_organizer?(group)
+    self.groups_owned.include(group)
+  end
+
   private
   def ensure_session_token!
     self.session_token ||= generate_session_token

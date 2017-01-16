@@ -19,7 +19,15 @@ class Group < ActiveRecord::Base
   has_many :memberships
 
   has_many :organizers, through: :organizations, source: :user
-  has_many :members, through: :memberships
+  has_many :members, through: :memberships, source: :user
+
+  def has_member?(member)
+    self.members.include(member)
+  end
+
+  def has_organizer?(user)
+    self.organizers.include(user)
+  end
 
 
 end

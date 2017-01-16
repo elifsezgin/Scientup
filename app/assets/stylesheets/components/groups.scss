@@ -34,13 +34,15 @@
   align-items: center;
 }
 .group-header {
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   text-align: center;
   margin-top: 20px;
   height: 180px;
-  width: 960px;
+  // width: 960px;
+
   background-color: $orange-background;
   border-radius: 10px;
 
@@ -50,10 +52,12 @@
   }
 
 }
-.group-navbar {
+
+.group-navbar-delete  {
+  list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -62,12 +66,17 @@
   border: 1px solid $dark-gray;
   border-top: 15px solid $dark-gray;
   background-color: $light-gray;
-  list-style: none;
   padding: 20px;
 }
 
+.group-navbar{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-start;
+}
+
 .group-navbar-item {
-  // margin-left: 10px;
   padding: 10px;
   color: $dark-gray;
   text-decoration: none;
@@ -79,28 +88,48 @@
   border-radius: 10px;
 }
 
+.delete-edit {
+  border-radius: 10px;
+  background-color: $light-gray;
+  float: right;
+  margin-right: 10px;
+}
+
 .group-content {
   margin-top: 20px;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  float: left;
 }
 
 .group-info {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   border: 1px solid $dark-gray;
   background-color: $light-gray;
   padding: 20px;
-  width: 260px;
+  width: 30%;
   margin-right: 20px;
   border-radius: 10px;
   img {
-    width: 260px;
+    width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
   }
+}
+
+.group-detail {
+  flex-grow: 2;
+  padding: 20px;
+  width: 60%;
+  float: right;
+  border: 1px solid $dark-gray;
+  background-color: $light-gray;
+  border-radius: 10px;
 }
 .group-city-name {
   color: $purple;
@@ -122,6 +151,8 @@
   margin-top: 0;
 }
 .group-info-items {
+  list-style: none;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -135,14 +166,6 @@
   color: inherit;
 }
 
-
-.group-detail {
-  padding: 20px;
-  width: 600px;
-  border: 1px solid $dark-gray;
-  background-color: $light-gray;
-  border-radius: 10px;
-}
 
 .group-creation-form {
   display: flex;

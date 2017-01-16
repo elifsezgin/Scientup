@@ -5,7 +5,6 @@ import MainHeader from '../header/main_header';
 
 class Home extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <HeaderContainer />

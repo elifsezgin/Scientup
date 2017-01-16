@@ -40,10 +40,12 @@ const Root = ({store}) => {
             onEnter={_ensureLoggedIn} />
           <Route
             path='groups/new'
-            component={ NewGroupContainer } />
+            component={ NewGroupContainer }
+            onEnter={_ensureLoggedIn} />
           <Route
             path='groups/:groupId'
-            component={ GroupDetailContainer } />
+            component={ GroupDetailContainer }
+            onEnter={_ensureLoggedIn}  />
 
         </Route>
       </Router>
