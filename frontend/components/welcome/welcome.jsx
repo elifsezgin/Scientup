@@ -1,16 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
-import HeaderContainer from '../header/header_container';
 import ReactPlayer from 'react-player';
 import MainHeader from '../header/main_header';
 
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lat: null,
-      lon: null
-    };
     this.getLocation = this.getLocation.bind(this);
     this.showPosition = this.showPosition.bind(this);
   }
@@ -28,19 +23,12 @@ class Welcome extends React.Component {
   }
 
   showPosition(position)  {
-    this.setState({
-      lat: position.coords.latitude,
-      lon: position.coords.longitude
-    });
-    this.props.getLocation(this.state.lat, this.state.lon);
-    this.props.getLocation(this.state.lat, this.state.lon);
+    this.props.getLocation(position.coords.latitude, position.coords.longitude);
   }
-
 
   render() {
     return(
       <div>
-        <HeaderContainer />
         <MainHeader userLoggedIn={Boolean(this.props.currentUser)} />
 
         {this.props.children}

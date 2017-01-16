@@ -1,6 +1,5 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import HeaderContainer from '../header/header_container';
 
 class NewGroup extends React.Component {
   constructor(props) {
@@ -78,7 +77,6 @@ class NewGroup extends React.Component {
     const placeholderCityName = (this.props.cityName) ? (this.props.cityName) : 'San Francisco';
     return (
       <div>
-        <HeaderContainer />
           <form className='group-creation-form'>
             {this.renderErrors()}
 

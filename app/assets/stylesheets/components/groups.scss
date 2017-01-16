@@ -131,6 +131,21 @@
   background-color: $light-gray;
   border-radius: 10px;
 }
+
+.group-description {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $darkest-gray;
+}
+
+.events-header {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:22px;
+  font-weight:500;
+  color:$darkest-gray;
+  margin-top: 50px;
+  text-shadow:1px 1px 0px white;
+}
+
 .group-city-name {
   color: $purple;
   font-weight: 300;

@@ -69,20 +69,18 @@ class Header extends React.Component {
 
 
   render() {
-
     const loginLink = (<button
+      key={1}
       className='header-buttons'
       onClick={this.openModal.bind(this, 'login')}>Log in</button>);
 
     const signupLink = (<button
+      key={2}
       className='header-buttons'
       onClick={this.openModal.bind(this, 'signup')}>Sign up</button>);
 
-    // const loginLink = (<Link to='/welcome/login'><button className='header-buttons'>Log in</button></Link>);
-    // const signupLink = (<Link to='/welcome/signup'><button className='header-buttons'>Sign up</button></Link>);
-    const demoLink = (<p onClick={this.handleDemo}><button className='header-buttons'>Demo</button></p>);
-    const logoutLink = (<p onClick={this.handleLogout}><button className='header-buttons'>Log out</button></p>);
-
+    const demoLink = (<p key={3} onClick={this.handleDemo}><button className='header-buttons'>Demo</button></p>);
+    const logoutLink = (<p key={4} onClick={this.handleLogout}><button className='header-buttons'>Log out</button></p>);
 
     const links = ( (this.props.currentUser) ? [logoutLink] : [demoLink, loginLink, signupLink] );
 

@@ -42,10 +42,11 @@ id          | integer   | not null, primary key
 group_id    | integer   | not null, foreign key (references users), indexed
 name        | string    | not null
 description | text      | not null
+location    | string    | not null
 date        | date      | not null
 time        | time      | not null
 
-## events_joined
+## participation
 
 column name | data type | details
 ------------|-----------|-----------------------

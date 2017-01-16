@@ -17,6 +17,7 @@ class Group < ActiveRecord::Base
 
   has_many :organizations
   has_many :memberships
+  has_many :events
 
   has_many :organizers, through: :organizations, source: :user
   has_many :members, through: :memberships, source: :user

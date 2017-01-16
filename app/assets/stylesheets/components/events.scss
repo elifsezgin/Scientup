@@ -1,0 +1,137 @@
+// Place all the styles related to the Api::Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-creation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position:relative;
+  margin-top:0;
+  text-align:center;
+
+  padding:40px;
+  border-radius:20px 0 0 0;
+  h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:12px;
+    font-weight:300;
+    margin-bottom:10px;
+    margin-top:20px;
+    color:$gray;
+    text-shadow:1px 1px 0px white;
+  }
+}
+
+.event-creation-labels {
+  display: flex;
+  justify-content:flex-start;
+
+  font-size: 18px;
+  font-weight: 400;
+  color: $darkest-gray;
+}
+
+.icons {
+  margin-right: 10px;
+  margin-left: 0px;
+}
+
+.event-creation-input {
+  display:block;
+  width: 90%;
+  padding:14px;
+  border-radius:6px;
+  border:0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color:$darkest-gray;
+  font-weight:600;
+  font-size:16px;
+  ::input-placeholder {
+    color: $gray;
+  }
+}
+
+.event-creation-button {
+  padding:14px;
+  border-radius:6px;
+  border:0;
+  margin-bottom:12px;
+  color:$gray;
+  font-size:16px;
+
+  display: inline-block;
+  position:relative;
+  float:left;
+  width:145px;
+  margin-top:10px;
+  background-color: $blue;
+  color:#fff;
+  font-weight:400;
+  text-shadow:1px 1px 0px #b0e8ea;
+  box-shadow:0px 3px 0px #b0e8ea;
+  transition: all .3s ease-in-out;
+  // a, a:visited {
+  //   text-decoration:none;
+  //   font-weight:400;
+  //   transition: all .3s ease-in-out;
+  // }
+}
+
+
+.event-creation-button:hover {
+  cursor: pointer;
+  background-color: $dark-gray;
+  text-shadow:1px 1px 0px $lightest-gray;
+  box-shadow:0px 3px 0px $lightest-gray;
+}
+
+.event-list-item-container {
+  width: 90%;
+  height: auto;
+  border: 1px solid $gray;
+  list-style: none;
+  display: flex;
+  background: $lightest-gray;
+  border-radius: 5px;
+}
+
+.event-list-item-date-time {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.event-list-item-time {
+
+  font-family:monospace;
+}
+.event-list-item-date {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color:$dark-gray;
+  font-family:sans-serif;
+}
+.event-list-item-group-event {
+  margin: 10px;
+}
+.event-list-item-group {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:12px;
+  font-weight:300;
+  margin-bottom:10px;
+  color:$darkest-gray;
+  text-shadow:1px 1px 0px white;
+}
+.event-list-item-event {
+  font-family: sans-serif;
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:10px;
+  color:$darkest-gray;
+  text-shadow:1px 1px 0px white;
+
+}
