@@ -9,10 +9,18 @@ class MainHeader extends React.Component {
   render() {
     window.propsheader = this.props;
     const welcomeVideo = (
+      <div>
       <video className="welcome-video" autoPlay muted loop>
         <source src="http://res.cloudinary.com/datsbxfvs/video/upload/v1484242056/welcome_video_gpslvo.mp4" type="video/mp4" />
         Could not find video.
-      </video>);
+      </video>
+      <div  className="welcome">
+        <h1>Find a ScientUp</h1>
+        <h3>Discover local Science events you love.</h3>
+        <h3>Join the science community you belong.</h3>
+      </div>
+      </div>);
+
     const homeBackground = (
       <div className='home-background'>
         <h1>Find a ScientUp</h1>

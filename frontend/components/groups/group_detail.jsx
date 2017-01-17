@@ -113,11 +113,11 @@ class GroupDetail extends React.Component {
               </div>
               <div className='group-info-items'>
                 <p>Upcoming Events:</p>
-                <p>12</p>
+                <p>{this.props.events[0].length}</p>
               </div>
               <div className='group-info-items'>
                 <p>Past Events:</p>
-                <p>42</p>
+                <p>{this.props.events[1].length}</p>
               </div>
               <div className='group-info-items'>
                 <Link to={`groups/${group.id}/events/new`} className='group-navbar-item link' onClick={this.newEvent}>Create Event</Link>

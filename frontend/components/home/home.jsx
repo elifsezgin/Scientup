@@ -40,7 +40,7 @@ class Home extends React.Component {
       <div className='home-components'>
         <MainHeader userLoggedIn={Boolean(this.props.currentUser)} />
         <div className='search-container'>
-          <SearchContainer />
+          <SearchContainer fetchAction={this.state.fetchAction} />
           <div className='group-event-switch'>
             <div key={'groups'}className='switch-buttons' onClick={this.fetchGroups}>Groups</div>
             <div key={'events'} className='switch-buttons' onClick={this.fetchEvents}>Events</div>

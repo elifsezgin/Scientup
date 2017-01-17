@@ -22,6 +22,47 @@
   color: $orange;
 }
 
+
+.welcome-video {
+  width: 100%;
+  height: auto;
+  margin-top: 90px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.welcome {
+  position: absolute;
+  margin-top: 50px;
+
+  width: 100%;
+  align-items: center;
+
+
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  h1 {
+
+    z-index: 5;
+    display: block;
+
+    font-family:  'Passion One', cursive;
+    font-size: 80px;
+  }
+  h3 {
+
+    font-size: 30px;
+    display: block;
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
 .header-list {
   list-style: none;
   margin-top: 8px;
@@ -100,18 +141,6 @@
   background-color: $dark-gray;
   text-shadow:1px 1px 0px $lightest-gray;
   box-shadow:0px 3px 0px $lightest-gray;
-}
-
-.welcome-video {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -100;
 }
 
 .demo-login-signup-container {
