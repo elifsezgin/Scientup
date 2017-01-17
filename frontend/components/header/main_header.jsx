@@ -24,7 +24,7 @@ class MainHeader extends React.Component {
 
     return (
       <div>
-        {background}
+      {background}
       </div>
     );
   }

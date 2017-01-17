@@ -1,1 +1,1 @@
-json.array! @events, :id, :name, :date, :time, :participants
+json.array! @events, :id, :name, :date, :time, :participants, :group

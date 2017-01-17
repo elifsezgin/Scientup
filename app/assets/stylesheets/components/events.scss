@@ -73,11 +73,7 @@
   text-shadow:1px 1px 0px #b0e8ea;
   box-shadow:0px 3px 0px #b0e8ea;
   transition: all .3s ease-in-out;
-  // a, a:visited {
-  //   text-decoration:none;
-  //   font-weight:400;
-  //   transition: all .3s ease-in-out;
-  // }
+
 }
 
 
@@ -91,12 +87,19 @@
 .event-list-item-container {
   width: 90%;
   height: auto;
+  margin: auto;
   border: 1px solid $gray;
   list-style: none;
   display: flex;
   background: $lightest-gray;
   border-radius: 5px;
 }
+
+.event-list-item-container:hover {
+  cursor: pointer;
+  background-color: $gray;
+}
+
 
 .event-list-item-date-time {
   display: flex;
@@ -109,6 +112,7 @@
   font-family:monospace;
 }
 .event-list-item-date {
+  margin-left: 10px;
   margin-top: 30px;
   margin-bottom: 10px;
   font-weight: 400;

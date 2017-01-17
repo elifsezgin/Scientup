@@ -105,11 +105,21 @@
   z-index: -100;
 }
 
+
+
+.home-components {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content:flex-start;
+  // align-items: center;
+}
+
 .home-background {
-  height: 150px;
+  height: 100px;
+  width: 100%;
   background-color: $orange;
   color: $white;
   text-align: center;
-  padding: 50px;
-
+  padding-top: 50px;
+  z-index: -100;
 }
