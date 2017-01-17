@@ -2,20 +2,17 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 import NewEventContainer from '../events/new_event_container';
 import EventListItem from '../events/event_list_item';
+import EventListContainer from '../events/event_list_container';
+import GroupInfoContainer from '../groups/group_info_container';
 
 class GroupDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      activity: 'description'
-    };
     this.deleteGroup = this.deleteGroup.bind(this);
     this.editGroup = this.editGroup.bind(this);
     this.addMember = this.addMember.bind(this);
     this.removeMember = this.removeMember.bind(this);
     this.joinLeaveGroup = this.joinLeaveGroup.bind(this);
-    this.newEvent = this.newEvent.bind(this);
-    this.description = this.description.bind(this);
   }
 
   componentDidMount () {
@@ -25,18 +22,6 @@ class GroupDetail extends React.Component {
   deleteGroup () {
     this.props.deleteGroup(parseInt(this.props.params.groupId)).then(()=>
     this.props.router.push('/'));
-  }
-
-  newEvent () {
-    this.setState({
-      activity: 'newEvent'
-    });
-  }
-
-  description () {
-    this.setState({
-      activity: 'description'
-    });
   }
 
   editGroup () {
@@ -74,29 +59,6 @@ class GroupDetail extends React.Component {
     }
   }
 
-  displayActivity (group) {
-    if (this.state.activity === 'description') {
-      const events = (group.events ? (
-        <ul>
-          <div className='events-header'>Group activities:</div>
-          {group.events.map((event, idx) => (
-            <EventListItem key={idx} event={event} group={group}/>
-          ))}
-        </ul>
-      ) : null);
-      return(
-        <div>
-          <div className='group-description'>{group.description}</div>
-          {events}
-        </div>
-      );
-    } else if (this.state.activity === 'newEvent') {
-      return(
-        <NewEventContainer />
-      );
-    }
-  }
-
   render(){
     const group = this.props.group;
     let organizators = null;
@@ -126,7 +88,7 @@ class GroupDetail extends React.Component {
               <h1>{group.title}</h1>
               <div className='group-navbar-delete'>
             <ul className='group-navbar'>
-              <li><div className='group-navbar-item' onClick={this.description}>Home</div></li>
+              <li><Link to={`groups/${group.id}`} className='group-navbar-item link' onClick={this.description}>Details</Link></li>
               <li><div className='group-navbar-item'>Members</div></li>
             </ul>
             <ul className='group-navbar'>
@@ -158,19 +120,20 @@ class GroupDetail extends React.Component {
                 <p>42</p>
               </div>
               <div className='group-info-items'>
-                <button className='group-navbar-item' onClick={this.newEvent}>Create Event</button>
+                <Link to={`groups/${group.id}/events/new`} className='group-navbar-item link' onClick={this.newEvent}>Create Event</Link>
               </div>
             </div>
             <div className='group-detail'>
-              {this.displayActivity(group)}
+              {(this.props.children) ? this.props.children : <GroupInfoContainer /> }
             </div>
 
           </div>
         </div>
-        {this.props.children}
       </div>
     );
   }
 }
+// {this.displayActivity(group)}
+// {this.displayActivity(group)}
 
 export default withRouter(GroupDetail);

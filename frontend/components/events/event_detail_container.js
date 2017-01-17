@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
   event: state.eventDetail,
 });
 const mapDispatchToProps = dispatch => ({
-  requestEvent: (event) => dispatch(requestEvent(event)),
+  requestEvent: (id) => dispatch(requestEvent(id)),
   clearErrors: () => dispatch(clearErrors()),
 });
 

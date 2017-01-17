@@ -4,7 +4,8 @@ import {requestGroup, deleteGroup, addMember, deleteMember} from '../../actions/
 
 const mapStateToProps = state => ({
   group: state.groupDetail,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  event: state.eventDetail
 });
 const mapDispatchToProps = dispatch => ({
   requestGroup: (id) => dispatch(requestGroup(id)),

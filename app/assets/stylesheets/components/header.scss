@@ -29,11 +29,16 @@
   margin-right: 20px;
 }
 
+.plus-icon {
+  margin-left: 10px;
+}
+
 .header-buttons {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   position: relative;
   margin-right: 20px;
-  width: 100px;
+  width: auto;
   height: 50px;
   background-color: $blue;
   padding: 10px;
@@ -86,6 +91,10 @@
   }
 }
 
+.link {
+  text-decoration: none;
+}
+
 .create-button:hover {
   cursor: pointer;
   background-color: $dark-gray;
@@ -105,7 +114,10 @@
   z-index: -100;
 }
 
-
+.demo-login-signup-container {
+  display: flex;
+  justify-content: space-between;
+}
 
 .home-components {
   // display: flex;
@@ -115,11 +127,18 @@
 }
 
 .home-background {
-  height: 100px;
   width: 100%;
   background-color: $orange;
   color: $white;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 50px;
   z-index: -100;
+  h1 {
+    font-family:  'Passion One', cursive;
+    font-size: 60px;
+  }
+  h3 {
+    font-family: 'Raleway', sans-serif;
+  }
 }

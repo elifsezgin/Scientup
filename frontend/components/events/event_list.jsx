@@ -14,13 +14,25 @@ class EventList extends React.Component {
 
   render () {
     window.props = this.props;
-    const events = this.props.events.map(event => (
-      <EventListItem key={event.id} event={event} group={event.group} />
-      )
+    let events = this.props.events;
+    if (this.props.group) {
+      events = this.props.events.filter((event)=> {
+        return (event.group.id === this.props.group.id);
+      }
+    );
+    }
+    const allEvents = events.map(event => {
+      return (<Link key={event.id}
+        className='link'
+        to={`groups/${event.group.id}/events/${event.id}`}>
+      <EventListItem event={event} group={event.group} />
+
+      </Link>);
+      }
     );
     return (
       <div className="event-list">
-        {events}
+        {allEvents}
         {this.props.children}
       </div>
     );

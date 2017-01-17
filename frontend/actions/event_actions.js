@@ -17,6 +17,10 @@ export const requestAllEvents = () => dispatch => (
   EventsAPIUtil.allEvents().then(events => dispatch(receiveEvents(events)))
 );
 
+export const requestEvent = (id) => dispatch => (
+  EventsAPIUtil.requestEvent(id).then(event => dispatch(receiveEvent(event)))
+);
+
 export const createEvent = (event) => dispatch => (
   EventsAPIUtil.createEvent(event).then(data => dispatch(receiveEvent(data)))
 );

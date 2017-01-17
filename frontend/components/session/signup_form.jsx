@@ -1,6 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
 class signupForm extends React.Component {
   constructor(props) {
@@ -13,6 +13,8 @@ class signupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   componentDidMount () {
@@ -23,8 +25,21 @@ class signupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.signup({ user }).then(()=> {
-    this.props.router.push('/');
+      this.props.closeModal();
+      this.redirect('/');
     });
+  }
+
+
+  redirect (route) {
+    this.props.router.push(route);
+  }
+
+  handleDemo (e) {
+    this.props.login({user: {username: 'Guest', password: 'password'}}).then(() => {
+      this.props.closeModal();
+    this.redirect('/home');
+  });
   }
 
   update(property) {
@@ -64,10 +79,13 @@ class signupForm extends React.Component {
                value={this.state.password}
                placeholder="Enter Password"
                onChange={this.update('password')}/>
+        <div className='demo-login-signup-container'>
         <input className="auth-form-button"
                type="submit"
                value='Sign up'
                onClick={this.handleSubmit}/>
+           <p key={3} onClick={this.handleDemo}><button className='header-buttons'>Demo</button></p>
+       </div>
         <br/>
         <br/>
         <br/>
@@ -77,4 +95,4 @@ class signupForm extends React.Component {
 }
 // <li><a href="#">Forgot your password?</a></li>
 
-export default signupForm;
+export default withRouter(signupForm);

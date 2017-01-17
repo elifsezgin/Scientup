@@ -47,14 +47,31 @@ class Header extends React.Component {
   createGroup () {
     if (this.props.currentUser) {
       return (
-        <Link to='groups/new' >
-        <button className='create-button'>
-            <i className="fa fa-plus" aria-hidden="true"></i>
+        <Link className='link' to='groups/new' >
+        <button className='header-buttons'>
+            <div>Create Group </div>
+            <i className="fa fa-plus plus-icon" aria-hidden="true"></i>
+
         </button>
       </Link>
       );
     }
   }
+
+  redirecthome () {
+    if (this.props.currentUser) {
+      return (
+        <Link className='link' to='/' >
+        <button className='header-buttons'>
+
+            <i className="fa fa-home plus-icon" aria-hidden="true"></i>
+
+        </button>
+      </Link>
+      );
+    }
+  }
+
 
   openModal(modalType) {
     this.setState({
@@ -79,19 +96,19 @@ class Header extends React.Component {
       className='header-buttons'
       onClick={this.openModal.bind(this, 'signup')}>Sign up</button>);
 
-    const demoLink = (<p key={3} onClick={this.handleDemo}><button className='header-buttons'>Demo</button></p>);
+    // const demoLink = (<p key={3} onClick={this.handleDemo}><button className='header-buttons'>Demo</button></p>);
     const logoutLink = (<p key={4} onClick={this.handleLogout}><button className='header-buttons'>Log out</button></p>);
 
-    const links = ( (this.props.currentUser) ? [logoutLink] : [demoLink, loginLink, signupLink] );
+    const links = ( (this.props.currentUser) ? [logoutLink] : [loginLink, signupLink] );
 
     const loginOrSignup = (
-       (this.state.modalType === 'login') ? (<LoginFormContainer />) : (<SignupFormContainer />)
+       (this.state.modalType === 'login') ? (<LoginFormContainer closeModal={this.closeModal} />) : (<SignupFormContainer closeModal={this.closeModal}  />)
     );
 
     const ModalStyle = {
   overlay : {
     position          : 'fixed',
-    top               : 0,
+    top               : '70px',
     left              : 0,
     right             : 0,
     bottom            : 0,
@@ -110,14 +127,15 @@ class Header extends React.Component {
     borderRadius          : '20px',
     backgroundColor : '#EDE5E2'
   }
-};
+  };
 
   return(
     <div>
       <header className='header-container'>
-        <Link to="/home"><img className='logo' src={window.assets.logo}></img></Link>
+        <Link className='link' to="/home"><img className='logo' src={window.assets.logo}></img></Link>
         {this.welcomeMessage()}
         <ul className='header-list'>
+          <li>{this.redirecthome()}</li>
           <li>{this.createGroup()}</li>
           {links}
           <Modal

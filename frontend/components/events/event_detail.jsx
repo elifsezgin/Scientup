@@ -6,10 +6,19 @@ class EventDetail extends React.Component {
     super(props);
   }
 
+  componentDidMount () {
+    this.props.requestEvent(parseInt(this.props.params.eventId));
+  }
+
+  componentWillReceiveProps() {
+    this.props.requestEvent(parseInt(this.props.params.eventId));
+  }
+
   render () {
     return(
       <div>
         {this.props.event.name}
+        <h1>EVENT DETAIL</h1>
       </div>
     );
   }

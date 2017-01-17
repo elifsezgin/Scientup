@@ -8,7 +8,9 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GroupDetailContainer from './groups/group_detail_container';
 import NewGroupContainer from './groups/new_group_container';
+import NewEventContainer from './events/new_event_container';
 import EventDetailContainer from './events/event_detail_container';
+import GroupInfoContainer from './groups/group_info_container';
 
 
 const Root = ({store}) => {
@@ -48,6 +50,10 @@ const Root = ({store}) => {
             path='groups/:groupId'
             component={ GroupDetailContainer }
             onEnter={_ensureLoggedIn} >
+            <Route
+              path='events/new'
+              component={ NewEventContainer }
+              onEnter={_ensureLoggedIn}/>
             <Route
               path='events/:eventId'
               component={ EventDetailContainer }

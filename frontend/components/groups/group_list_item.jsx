@@ -12,7 +12,7 @@ const GroupListItem = ({ title, imageUrl, groupId }) => {
     backgroundImage: `url(${imageUrl})`
   };
   return (
-    <Link to={`groups/${groupId}`}>
+    <Link className='link' to={`groups/${groupId}`}>
       <li className='group-item' style={groupItemStyle}>
           <h3>{title}</h3>
       </li>
