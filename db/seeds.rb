@@ -31,12 +31,12 @@ User.create(username: 'Damianus', email: 'damianus@damianus.com', password:'pass
 User.create(username: 'Damianus', email: 'damianus@damianus.com', password:'password')
 
 
-Organizatioin.create(user_id: 2, group_id: 1)
-Organizatioin.create(user_id: 3, group_id: 2)
-Organizatioin.create(user_id: 4, group_id: 3)
-Organizatioin.create(user_id: 5, group_id: 4)
-Organizatioin.create(user_id: 6, group_id: 5)
-Organizatioin.create(user_id: 7, group_id: 6)
+Organization.create(user_id: 2, group_id: 1)
+Organization.create(user_id: 3, group_id: 2)
+Organization.create(user_id: 4, group_id: 3)
+Organization.create(user_id: 5, group_id: 4)
+Organization.create(user_id: 6, group_id: 5)
+Organization.create(user_id: 7, group_id: 6)
 
 Membership.create(user_id: 7, group_id: 1)
 Membership.create(user_id: 2, group_id: 1)
