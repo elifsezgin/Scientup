@@ -108,7 +108,7 @@ class GroupDetail extends React.Component {
       group.organizers.forEach(organizer => {
         if (organizer.username === this.props.currentUser.username) {
           authRequiredActions = (
-            <ul>
+            <ul className='group-navbar'>
               <li><button className='group-navbar-item delete-edit' onClick={this.editGroup}>Edit Group</button></li>
               <li><button className='group-navbar-item delete-edit' onClick={this.deleteGroup}>Delete Group</button></li>
             </ul>
