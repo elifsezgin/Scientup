@@ -22,7 +22,7 @@ group4 = Group.create!(title: 'Mathematicians', description: 'Meet other local m
 
 group5 = Group.create!(title: 'Chemists', description: 'Meet other local chemists to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484353447/Unknown-5_jzila0.jpg")
 
-group6 = Group.create!(title: "Computer Scientists", description: "Meet other local computer scientists to discuss the latest news and theories.", city_name: "San Francisco", image_url: "http:r//res.cloudinary.com/datsbxfvs/image/upload/v1484353544/compsc_n2ryhb.png")
+group6 = Group.create!(title: "Computer Scientists", description: "Meet other local computer scientists to discuss the latest news and theories.", city_name: "San Francisco", image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484353544/compsc_n2ryhb.png")
 
 
 user1 = User.create!(username: 'Guest', email: 'guest@guest.com', password:'password')
