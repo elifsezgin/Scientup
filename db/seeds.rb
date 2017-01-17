@@ -32,7 +32,6 @@ user4 = User.create!(username: 'Riaz', email: 'riaz@riaz.com', password:'passwor
 user5 = User.create!(username: 'Nilam', email: 'nilam@nilam.com', password:'password')
 user6 = User.create!(username: 'Mattithiah', email: 'mattithiah@mattithiah.com', password:'password')
 user7 = User.create!(username: 'Damianus', email: 'damianus@damianus.com', password:'password')
-user8 = User.create!(username: 'Damianus', email: 'damianus@damianus.com', password:'password')
 
 
 Organization.create!(user_id: 2, group_id: 1)
