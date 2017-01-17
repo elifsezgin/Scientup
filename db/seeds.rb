@@ -20,7 +20,6 @@ Group.create(title: 'Mathematicians', description: 'Meet other local mathematici
 Group.create(title: 'Chemists', description: 'Meet other local chemists to discuss the latest news and theories.', city_name: 'San Francisco', image_url: "http://res.cloudinary.com/datsbxfvs/image/upload/v1484353447/Unknown-5_jzila0.jpg")
 
 
-User.find_by_username('Science Lover').delete
 User.create(username: 'Guest', email: 'guest@guest.com', password:'password')
 User.create(username: 'Kendall', email: 'kendall@kendall.com', password:'password')
 User.create(username: 'Anton', email: 'anton@anton.com', password:'password')

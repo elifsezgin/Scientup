@@ -28,7 +28,7 @@ class Header extends React.Component {
   }
 
   handleDemo (e) {
-    this.props.login({user: {username: 'Science Lover', password: 'password'}}).then(() =>
+    this.props.login({user: {username: 'Guest', password: 'password'}}).then(() =>
     this.redirect('/home'));
   }
 
