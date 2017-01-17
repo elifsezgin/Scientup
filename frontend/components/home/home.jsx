@@ -8,19 +8,11 @@ class Home extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      fetchAction: 'group'
+      fetchAction: 'groups'
     };
     this.fetchAction = this.fetchAction.bind(this);
     this.fetchGroups = this.fetchGroups.bind(this);
     this.fetchEvents = this.fetchEvents.bind(this);
-  }
-
-  fetchAction() {
-    if (this.state.fetchAction === 'group') {
-      return(<GroupListContainer />);
-    } else {
-      return(<EventListContainer />);
-    }
   }
 
   fetchGroups() {
@@ -35,6 +27,14 @@ class Home extends React.Component {
     });
   }
 
+  fetchAction() {
+    if (this.state.fetchAction === 'groups') {
+      return(<GroupListContainer />);
+    } else {
+      return(<EventListContainer />);
+    }
+  }
+
   render() {
     return (
       <div className='home-components'>
@@ -42,8 +42,8 @@ class Home extends React.Component {
         <div className='search-container'>
           <SearchContainer />
           <div className='group-event-switch'>
-            <div className='switch-buttons' onClick={this.fetchGroups}>Groups</div>
-            <div className='switch-buttons' onClick={this.fetchEvents}>Events</div>
+            <div key={'groups'}className='switch-buttons' onClick={this.fetchGroups}>Groups</div>
+            <div key={'events'} className='switch-buttons' onClick={this.fetchEvents}>Events</div>
           </div>
           </div>
           {this.fetchAction()}
