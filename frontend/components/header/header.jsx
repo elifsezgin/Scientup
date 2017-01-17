@@ -64,7 +64,7 @@ class Header extends React.Component {
         <Link className='link' to='/' >
         <button className='header-buttons'>
 
-            <i className="fa fa-home plus-icon" aria-hidden="true"></i>
+            <i className="fa fa-home" aria-hidden="true"></i>
 
         </button>
       </Link>
