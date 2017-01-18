@@ -10,7 +10,11 @@ class Api::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    if params[:searchInput]
+      @events = Event.all.where('LOWER(name) ~ LOWER(?)', params[:searchInput])
+    else
+      @events = Event.all
+    end
     render 'api/events/index.json.jbuilder'
   end
 

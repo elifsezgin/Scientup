@@ -1,7 +1,8 @@
-export const allEvents = () => (
+export const eventsSearch = (data) => (
   $.ajax({
     method: 'GET',
-    url: 'api/events'
+    url: 'api/events',
+    data
   })
 );
 

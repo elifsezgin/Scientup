@@ -6,7 +6,6 @@ const searchReducer = (state = {searchType: '', searchInput: ''}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case UPDATE_SEARCH:
-
       return merge({}, state, { searchType: action.searchType, searchInput: action.searchInput });
     default:
       return state;

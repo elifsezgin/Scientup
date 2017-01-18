@@ -13,7 +13,6 @@ class Api::GroupsController < ApplicationController
   end
 
   def index
-
     if params[:searchInput]
       @groups = Group.all.where('LOWER(title) ~ LOWER(?)', params[:searchInput])
     else
