@@ -8,8 +8,14 @@ import GroupInfoContainer from '../groups/group_info_container';
 class GroupDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      navbar: 'groupDetail'
+    };
     this.deleteGroup = this.deleteGroup.bind(this);
     this.editGroup = this.editGroup.bind(this);
+    this.groupDetail = this.groupDetail.bind(this);
+    this.members = this.members.bind(this);
+    this.organizators = this.organizators.bind(this);
     this.addMember = this.addMember.bind(this);
     this.removeMember = this.removeMember.bind(this);
     this.joinLeaveGroup = this.joinLeaveGroup.bind(this);
@@ -22,6 +28,18 @@ class GroupDetail extends React.Component {
   deleteGroup () {
     this.props.deleteGroup(parseInt(this.props.params.groupId)).then(()=>
     this.props.router.push('/'));
+  }
+
+  groupDetail () {
+    this.setState({navbar: 'groupDetail'});
+  }
+
+  members () {
+    this.setState({navbar: 'members'});
+  }
+
+  organizators () {
+    this.setState({navbar: 'organizators'});
   }
 
   editGroup () {
@@ -59,6 +77,43 @@ class GroupDetail extends React.Component {
     }
   }
 
+  navbar () {
+    switch (this.state.navbar) {
+      case 'members':
+      return (
+        <div>{this.props.group.members.map((member, idx) => (
+            <div key={idx} className='event-detail-participation'>
+              <div className='event-detail-event-datetime'>{member.username}
+              </div>
+              <div className='event-detail-event-datetime'>-</div>
+              <div className='event-detail-event-datetime'>{member.email}
+              </div>
+
+              </div>
+          ))}</div>
+      );
+      case 'organizators':
+      return (
+        <div>{this.props.group.organizers.map((organizator, idx) => (
+            <div key={idx} className='event-detail-participation'>
+              <div className='event-detail-event-datetime'>{organizator.username}
+              </div>
+              <div className='event-detail-event-datetime'>-</div>
+              <div className='event-detail-event-datetime'>{organizator.email}
+              </div>
+
+              </div>
+          ))}</div>
+      );
+      default:
+        return (
+          <GroupInfoContainer />
+        );
+    }
+
+  }
+
+
   render(){
     const group = this.props.group;
     let organizators = null;
@@ -88,8 +143,10 @@ class GroupDetail extends React.Component {
               <h1>{group.title}</h1>
               <div className='group-navbar-delete'>
             <ul className='group-navbar'>
-              <li><Link to={`groups/${group.id}`} className='group-navbar-item link' onClick={this.description}>Details</Link></li>
-              <li><div className='group-navbar-item'>Members</div></li>
+              <li><Link to={`groups/${group.id}`} className='group-navbar-item link' onClick={this.groupDetail}>Details</Link></li>
+              <li>
+                <div className='group-navbar-item'
+                  onClick={this.members}>Members</div></li>
             </ul>
             <ul className='group-navbar'>
             <li>{this.joinLeaveGroup()}</li>
@@ -103,11 +160,12 @@ class GroupDetail extends React.Component {
               <img src={group.image_url}></img>
               <div className='group-city-name'>{group.city_name}</div>
               <div className='created-at'>Created at: {Date(group.created_at).slice(0, 15)}</div>
-              <div className='group-info-items'>
+              <div className='group-info-items'
+                onClick={this.organizators}>
                 <p>Organizators:</p>
-                <div>{organizators}</div>
+                <p>{organizators}</p>
               </div>
-              <div className='group-info-items'>
+              <div className='group-info-items' onClick={this.members}>
                 <p>Members:</p>
                 <p>{memberCount}</p>
               </div>
@@ -124,7 +182,7 @@ class GroupDetail extends React.Component {
               </div>
             </div>
             <div className='group-detail'>
-              {(this.props.children) ? this.props.children : <GroupInfoContainer /> }
+              {(this.props.children) ? this.props.children : this.navbar() }
             </div>
 
           </div>

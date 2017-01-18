@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router';
+import MapContainer from '../maps/map_container';
 
 class EventDetail extends React.Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class EventDetail extends React.Component {
         {this.joinLeaveEvent()}
         </div>
         <div key={6} className='event-detail-event-datetime'>{this.props.event.description}</div>
+        <MapContainer />
       </div>
     );
   }
