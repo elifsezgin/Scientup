@@ -44,7 +44,7 @@ class GroupDetail extends React.Component {
       this.props.group.members.forEach(member => {
         if (member.username === currentUser.username) {
           button = (<button
-              className='group-navbar-item delete-edit'
+              className='group-join-buttons'
               onClick={this.removeMember}>Leave Group</button>);
       }});
     }
@@ -53,7 +53,7 @@ class GroupDetail extends React.Component {
     } else {
       return (
           <button
-            className='group-navbar-item delete-edit'
+            className='group-join-buttons'
             onClick={this.addMember}>Join Group</button>
         );
     }
@@ -105,7 +105,7 @@ class GroupDetail extends React.Component {
               <div className='created-at'>Created at: {Date(group.created_at).slice(0, 15)}</div>
               <div className='group-info-items'>
                 <p>Organizators:</p>
-                {organizators}
+                <div>{organizators}</div>
               </div>
               <div className='group-info-items'>
                 <p>Members:</p>
@@ -120,7 +120,7 @@ class GroupDetail extends React.Component {
                 <p>{this.props.events[1].length}</p>
               </div>
               <div className='group-info-items'>
-                <Link to={`groups/${group.id}/events/new`} className='group-navbar-item link' onClick={this.newEvent}>Create Event</Link>
+                <Link to={`groups/${group.id}/events/new`} className='group-join-buttons link' onClick={this.newEvent}>Create Event</Link>
               </div>
             </div>
             <div className='group-detail'>

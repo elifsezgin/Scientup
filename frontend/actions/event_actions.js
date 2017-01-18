@@ -24,3 +24,14 @@ export const requestEvent = (id) => dispatch => (
 export const createEvent = (event) => dispatch => (
   EventsAPIUtil.createEvent(event).then(data => dispatch(receiveEvent(data)))
 );
+
+
+export const addParticipant = (info) => dispatch => (
+  EventsAPIUtil.addParticipant(info).then(data => (
+      dispatch(receiveEvent(data))))
+);
+
+export const deleteParticipant = (id) => dispatch => (
+  EventsAPIUtil.deleteParticipant(id).then(data => (
+      dispatch(receiveEvent(data))))
+);

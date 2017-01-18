@@ -1,0 +1,2 @@
+module Api::ParticipantsHelper
+end

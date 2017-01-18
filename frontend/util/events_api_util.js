@@ -35,3 +35,19 @@ export const updateEvent = (eventData, groupId) => (
     data: eventData
   })
 );
+
+
+export const addParticipant = (data) => (
+  $.ajax({
+    method: 'POST',
+    url: `api/participations/`,
+    data: data
+  })
+);
+
+export const deleteParticipant = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/participations/${id}`
+  })
+);

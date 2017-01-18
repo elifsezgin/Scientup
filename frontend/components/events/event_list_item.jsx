@@ -16,8 +16,9 @@ class EventListItem extends React.Component {
           <div className='event-list-item-time'>{time}</div>
         </div>
         <div className='event-list-item-group-event'>
-          <div className='event-list-item-group'>{this.props.group.title}</div>
+          <div className='event-list-item-group'>{this.props.group.title.toUpperCase()}</div>
           <div className='event-list-item-event'>{this.props.event.name}</div>
+          <div className='event-list-item-group'>{this.props.event.participants.length} people are going</div>
         </div>
       </li>
       </div>

@@ -100,7 +100,6 @@
   background-color: $gray;
 }
 
-
 .event-list-item-date-time {
   display: flex;
   flex-direction: column;
@@ -159,4 +158,36 @@
   font-size:20px;
   font-weight:400;
   color:$darkest-gray;
+}
+
+.event-detail-participation {
+  margin: 20px 20px 0px 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size:15px;
+  font-weight:600;
+  color: $purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-join-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: auto;
+  background-color: $purple;
+  padding: 10px;
+  border-radius: 6px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all .3s ease-in-out;
+  color: $white;
+  a, a:visited {
+    color: $white;
+    text-decoration:none;
+    font-weight:400;
+  }
+
 }
