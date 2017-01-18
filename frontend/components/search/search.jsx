@@ -7,17 +7,14 @@ class Search extends React.Component {
       searchParams: ''
     };
 
-    // this.switch = this.switch.bind(this);
     this.update = this.update.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  update(property) {
-    return e => this.setState({ [property]: e.target.value });
-  }
-
-  handleSubmit() {
-    
+  update() {
+    return e => {
+      this.setState({ ['searchParams']: e.target.value });
+      this.props.updateSearch(this.props.fetchAction, e.target.value);
+    };
   }
 
   render() {
@@ -31,7 +28,7 @@ class Search extends React.Component {
             onChange={this.update('searchParams')} />
           <i className="fa fa-search search-icon"
             aria-hidden="true"
-            onClick={this.handleSubmit} ></i>
+            onClick={this.update} ></i>
 
         </form>
 

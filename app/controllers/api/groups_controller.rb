@@ -13,7 +13,12 @@ class Api::GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.all
+
+    if params[:searchInput]
+      @groups = Group.all.where('LOWER(title) ~ LOWER(?)', params[:searchInput])
+    else
+      @groups = Group.all
+    end
     render 'api/groups/index.json.jbuilder'
   end
 

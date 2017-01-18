@@ -32,7 +32,7 @@ export const receiveLocation = (location) => ({
 });
 
 export const requestAllGroups = () => dispatch => (
-  GroupsAPIUtil.allGroups().then(groups => dispatch(receiveGroups(groups)))
+  GroupsAPIUtil.groupsSearch().then(groups => dispatch(receiveGroups(groups)))
 );
 
 export const requestGroup = (id) => dispatch => (
