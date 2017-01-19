@@ -48,12 +48,47 @@ class EventList extends React.Component {
       </Link>);
       }
     );
+    const eventList = () => {
+      switch (this.props.display) {
+        case 'all':
+        return (
+          <div className="event-list">
+            <p className='group-description'>Upcoming events:</p>
+            {upcomingEvents}
+            <p className='group-description'>Past events:</p>
+            {pastEvents}
+          </div>
+        );
+        case 'upcoming':
+        return (
+          <div className="event-list">
+            <p className='group-description'>Upcoming events:</p>
+            {upcomingEvents}
+
+          </div>
+        );
+        case 'past':
+        return (
+          <div className="event-list">
+            <p className='group-description'>Past events:</p>
+            {pastEvents}
+          </div>
+        );
+        default:
+        return (
+          <div className="event-list">
+            <p className='group-description'>Upcoming events:</p>
+            {upcomingEvents}
+            <p className='group-description'>Past events:</p>
+            {pastEvents}
+          </div>
+        );
+      }
+    };
+
     return (
-      <div className="event-list">
-        <p className='group-description'>Upcoming events:</p>
-        {upcomingEvents}
-        <p className='group-description'>Past events:</p>
-        {pastEvents}
+      <div>
+        {eventList()}
         {this.props.children}
       </div>
     );

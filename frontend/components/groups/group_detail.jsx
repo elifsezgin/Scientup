@@ -26,6 +26,8 @@ class GroupDetail extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleYes = this.handleYes.bind(this);
     this.handleNo = this.handleNo.bind(this);
+    this.upcoming = this.upcoming.bind(this);
+    this.past = this.past.bind(this);
   }
 
   componentDidMount () {
@@ -47,6 +49,12 @@ class GroupDetail extends React.Component {
 
   organizators () {
     this.setState({navbar: 'organizators'});
+  }
+  upcoming () {
+    this.setState({navbar: 'upcoming'});
+  }
+  past () {
+    this.setState({navbar: 'past'});
   }
 
   editGroup () {
@@ -111,10 +119,9 @@ class GroupDetail extends React.Component {
       case 'members':
       return (
         <div>{this.props.group.members.map((member, idx) => (
-            <div key={idx} className='event-detail-participation'>
+            <div key={idx} className='people'>
               <div className='event-detail-event-datetime'>{member.username}
               </div>
-              <div className='event-detail-event-datetime'>-</div>
               <div className='event-detail-event-datetime'>{member.email}
               </div>
 
@@ -123,16 +130,23 @@ class GroupDetail extends React.Component {
       );
       case 'organizators':
       return (
-        <div>{this.props.group.organizers.map((organizator, idx) => (
+        <div className='people'>{this.props.group.organizers.map((organizator, idx) => (
             <div key={idx} className='event-detail-participation'>
               <div className='event-detail-event-datetime'>{organizator.username}
               </div>
-              <div className='event-detail-event-datetime'>-</div>
               <div className='event-detail-event-datetime'>{organizator.email}
               </div>
 
               </div>
           ))}</div>
+      );
+      case 'upcoming':
+        return (<EventListContainer group={this.props.group} display={'upcoming'} />);
+      case 'past':
+        return (<EventListContainer group={this.props.group} display={'past'} />);
+      case 'groupDetail':
+      return (
+        <GroupInfoContainer />
       );
       default:
         return (
@@ -164,7 +178,6 @@ class GroupDetail extends React.Component {
     backgroundColor       : '$gray',
     transform             : 'translate(-50%, -50%)',
     borderRadius          : '20px',
-    backgroundColor : '#EDE5E2'
   }
   };
     if (this.props.errors.length > 0) {
@@ -200,6 +213,11 @@ class GroupDetail extends React.Component {
 
   render(){
     const group = this.props.group;
+    if (!group) {
+      return (
+        <div></div>
+      );
+    }
     let organizators = null;
     let authRequiredActions = null;
     if (group.organizers) {
@@ -253,11 +271,13 @@ class GroupDetail extends React.Component {
                 <p>Members:</p>
                 <p>{memberCount}</p>
               </div>
-              <div className='group-info-items'>
+              <div className='group-info-items'
+                onClick={this.upcoming}>
                 <p>Upcoming Events:</p>
                 <p>{this.props.events[0].length}</p>
               </div>
-              <div className='group-info-items'>
+              <div className='group-info-items'
+                onClick={this.past}>
                 <p>Past Events:</p>
                 <p>{this.props.events[1].length}</p>
               </div>

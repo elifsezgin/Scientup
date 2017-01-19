@@ -13,7 +13,7 @@ class GroupInfo extends React.Component {
     const events = (group.events ? (
       <ul>
         <div className='events-header'>Group activities:</div>
-        <EventListContainer group={group} />
+        <EventListContainer group={group} display='all'/>
       </ul>
     ) : null);
     return(

@@ -171,6 +171,12 @@
   align-items: center;
 }
 
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content:space-between;
+}
 .event-join-buttons {
   display: flex;
   justify-content: space-between;
@@ -190,4 +196,12 @@
     font-weight:400;
   }
 
+}
+
+.no-user {
+  color: $dark-gray;
+  font-family: 'Raleway',sans-serif;
+  font-size: 15px;
+  font-weight:400;
+  margin: 10px
 }

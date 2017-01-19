@@ -15,6 +15,13 @@ class Home extends React.Component {
     this.fetchEvents = this.fetchEvents.bind(this);
   }
 
+  componentDidMount () {
+
+    if (this.props.groupDetail) {
+      this.props.receiveGroup(null);
+    }
+  }
+
   fetchGroups() {
     this.setState({
       fetchAction: 'groups'

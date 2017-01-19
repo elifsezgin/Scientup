@@ -11,7 +11,6 @@ class GroupList extends React.Component {
     this.props.requestAllGroups();
   }
 
-
   render () {
     window.props = this.props;
     const groups = this.props.groups.map(data => (

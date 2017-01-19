@@ -17,13 +17,18 @@ export const selectAllEvents = ({ events }) => {
   return allEvents;
 };
 
-export const selectUpcomingAndPastEvents = ({ events }) => {
+export const selectUpcomingAndPastEvents = ({ events, groupDetail }) => {
 
   const allEvents = selectAllEvents({ events });
   const upcomingEvents = [];
   const pastEvents = [];
   allEvents.forEach((event)=>{
     const event_datetime = (event.date + 'T' + event.time.split('T')[1]);
+    if (groupDetail) {
+      if (event.group.id !== groupDetail.id) {
+        return;
+      }
+    }
     if (Date.parse(event_datetime) > Date.now()) {
       upcomingEvents.push(event);
     } else {
