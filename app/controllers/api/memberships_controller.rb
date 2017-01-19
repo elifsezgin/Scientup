@@ -19,16 +19,26 @@ class Api::MembershipsController < ApplicationController
       JOIN
         events ON participations.event_id = events.id
       WHERE
-        group_id = ? AND user_id = ?
+        group_id = ?
+        AND
+        user_id = ?
+        AND
+        events.date >= CURRENT_DATE
     SQL
-    # debugger
-    if participations.empty?
+  if params[:deleteParticipations] == 'true'
+    participations.each do |participation|
+      participation.delete
+    end
+    @membership.delete
+    @group = Group.find(params[:id])
+    render 'api/groups/show.json.jbuilder'
+  elsif participations.empty?
       @membership.delete
       @group = Group.find(params[:id])
       render 'api/groups/show.json.jbuilder'
-    else
-      render json: ['You cannot join the events of the group if you leave.'], status: 422
-    end
+  else
+    render json: ['ALERT'], status: 422
+  end
   end
 
   private

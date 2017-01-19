@@ -20,15 +20,26 @@ class EventList extends React.Component {
 
 
   render () {
-    window.props = this.props;
-    let events = this.props.events;
+    let upcomingEvents = this.props.events[0];
+    let pastEvents = this.props.events[1];
     if (this.props.group) {
-      events = this.props.events.filter((event)=> {
+      upcomingEvents = this.props.events[0].filter((event)=> {
         return (event.group.id === this.props.group.id);
+      });
+      pastEvents = this.props.events[1].filter((event)=> {
+        return (event.group.id === this.props.group.id);
+      });
+    }
+    upcomingEvents = (upcomingEvents.length === 0) ? (<p className='no-user'>No upcoming events</p>) : upcomingEvents.map(event => {
+      return (<Link key={event.id}
+        className='link'
+        to={`groups/${event.group.id}/events/${event.id}`}>
+      <EventListItem event={event} group={event.group} />
+
+      </Link>);
       }
     );
-    }
-    const allEvents = events.map(event => {
+    pastEvents = (pastEvents.length === 0) ? (<p className='no-user'>No past events</p>) : pastEvents.map(event => {
       return (<Link key={event.id}
         className='link'
         to={`groups/${event.group.id}/events/${event.id}`}>
@@ -39,7 +50,10 @@ class EventList extends React.Component {
     );
     return (
       <div className="event-list">
-        {allEvents}
+        <p className='group-description'>Upcoming events:</p>
+        {upcomingEvents}
+        <p className='group-description'>Past events:</p>
+        {pastEvents}
         {this.props.children}
       </div>
     );

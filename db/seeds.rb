@@ -167,6 +167,16 @@ lng: -122.411393,
 address: '1199 Mason Street',
 group_id: group6.id)
 
+event10 = Event.create!(
+name: "React Thursday",
+description: "We will be teaching React and coding together. We welcome all levels.",
+date: "2017-01-07",
+time: "2000-01-01 18:00:00",
+lat: 37.794516,
+lng: -122.411393,
+address: '1199 Mason Street',
+group_id: group6.id)
+
 
 Participation.create!(user_id: user1.id, event_id: event1.id)
 Participation.create!(user_id: user2.id, event_id: event1.id)

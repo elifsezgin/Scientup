@@ -54,7 +54,6 @@ class NewGroup extends React.Component {
       (errors, imageInfo) => {
         if (errors === null) {
           let image_url = imageInfo[0].url;
-          console.log(imageInfo);
         }
       }
     );

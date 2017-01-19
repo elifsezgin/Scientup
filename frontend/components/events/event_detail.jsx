@@ -16,17 +16,19 @@ class EventDetail extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.params.eventId !== newProps.params.eventId) {
+    if (this.props.errors !== newProps.errors) {
       this.props.requestEvent(parseInt(newProps.params.eventId));
     }
   }
 
   addParticipant () {
-    this.props.addParticipant({event_id: this.props.event.id, user_id: this.props.currentUser.id});
+    this.props.addParticipant({event_id: this.props.event.id, user_id: this.props.currentUser.id}).then(()=>
+  this.props.clearErrors());
   }
 
   removeParticipant () {
-    this.props.deleteParticipant(this.props.event.id);
+    this.props.deleteParticipant(this.props.event.id).then(()=>
+  this.props.clearErrors());
   }
 
   joinLeaveEvent () {
@@ -35,7 +37,7 @@ class EventDetail extends React.Component {
 
     if (this.props.event.participants) {
       this.props.event.participants.forEach(participant => {
-        if (participant.username === currentUser.username) {
+        if (currentUser && participant.username === currentUser.username) {
           button = (<button
               className='event-join-buttons'
               onClick={this.removeParticipant}>Leave Event</button>);
@@ -51,6 +53,7 @@ class EventDetail extends React.Component {
         );
     }
   }
+
   renderErrors() {
     let errors = null;
     if (this.props.errors) {

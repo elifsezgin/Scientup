@@ -30,7 +30,6 @@ class Profile extends React.Component {
         <Link to={`groups/${data.id}`} className='group-info-items link'>{data.title}</Link>
       ));
       // <GroupListItem key={data.id} title={data.title} imageUrl={data.image_url} groupId={data.id} />
-      console.log(profile.events_joined);
       eventsJoined = profile.events_joined.map(data => (
         <Link to={`groups/${data.group_id}/events/${data.id}`} className='group-info-items link'>{data.name}</Link>
       ));

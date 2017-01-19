@@ -42,7 +42,7 @@ Event components are nested underneath the group page, and replace the GroupDeta
 
 The react components created for groups include ; EventList, EventListItem, EventDetail, NewEvent.
 
-<img src='' width='100%'/>
+<img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1484845440/Screen_Shot_2017-01-19_at_9.03.13_AM_ncx14m.png' width='100%'/>
 
 ### Homepage
 

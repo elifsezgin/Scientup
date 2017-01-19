@@ -58,9 +58,9 @@ export const addMember = (info) => dispatch => (
       dispatch(receiveGroup(data))))
 );
 
-export const deleteMember = (id) => dispatch => (
-  GroupsAPIUtil.deleteMember(id).then(data => (
-      dispatch(receiveGroup(data))), err => dispatch(receiveErrors(err.responseJSON)))
+export const deleteMember = (id, data) => dispatch => (
+  GroupsAPIUtil.deleteMember(id, data).then(result => (
+      dispatch(receiveGroup(result))), err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const getLocation = (lat, lon) => dispatch => (

@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   deleteGroup: (id) => dispatch(deleteGroup(id)),
   clearErrors: () => dispatch(clearErrors()),
   addMember: (info) => dispatch(addMember(info)),
-  deleteMember: (id) => dispatch(deleteMember(id))
+  deleteMember: (id, data) => dispatch(deleteMember(id, data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GroupDetail);

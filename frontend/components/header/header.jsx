@@ -26,7 +26,7 @@ class Header extends React.Component {
 
   handleLogout (e) {
     this.props.logout().then(() =>
-    this.redirect('/welcome'));
+    this.redirect('welcome'));
   }
 
   handleDemo (e) {

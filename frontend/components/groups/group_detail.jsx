@@ -4,12 +4,14 @@ import NewEventContainer from '../events/new_event_container';
 import EventListItem from '../events/event_list_item';
 import EventListContainer from '../events/event_list_container';
 import GroupInfoContainer from '../groups/group_info_container';
+import Modal from 'react-modal';
 
 class GroupDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navbar: 'groupDetail'
+      navbar: 'groupDetail',
+      modalOpen: false
     };
     this.deleteGroup = this.deleteGroup.bind(this);
     this.editGroup = this.editGroup.bind(this);
@@ -20,17 +22,14 @@ class GroupDetail extends React.Component {
     this.removeMember = this.removeMember.bind(this);
     this.joinLeaveGroup = this.joinLeaveGroup.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.handleYes = this.handleYes.bind(this);
+    this.handleNo = this.handleNo.bind(this);
   }
 
   componentDidMount () {
     this.props.requestGroup(parseInt(this.props.params.groupId));
-  }
-
-  componentWillUnmount () {
-    // if (newProps.errors !== this.props.errors) {
-      this.props.clearErrors();
-
-    // }
   }
 
   deleteGroup () {
@@ -55,11 +54,15 @@ class GroupDetail extends React.Component {
   }
 
   addMember () {
-    this.props.addMember({group_id: this.props.group.id, user_id: this.props.currentUser.id});
+    this.props.addMember({group_id: this.props.group.id, user_id: this.props.currentUser.id}).then(()=>
+  this.props.clearErrors(), err =>
+  this.openModal());
   }
 
-  removeMember () {
-    this.props.deleteMember(this.props.group.id);
+  removeMember (data) {
+    this.props.deleteMember(this.props.group.id, data).then(()=>
+  this.props.clearErrors(),  err =>
+  this.openModal());
   }
 
   joinLeaveGroup () {
@@ -68,10 +71,10 @@ class GroupDetail extends React.Component {
 
     if (this.props.group.members) {
       this.props.group.members.forEach(member => {
-        if (member.username === currentUser.username) {
+        if (currentUser && member.username === currentUser.username) {
           button = (<button
               className='group-join-buttons'
-              onClick={this.removeMember}>Leave Group</button>);
+              onClick={this.removeMember.bind(this, {deleteParticipations: false})}>Leave Group</button>);
       }});
     }
     if (button) {
@@ -83,6 +86,24 @@ class GroupDetail extends React.Component {
             onClick={this.addMember}>Join Group</button>
         );
     }
+  }
+
+  openModal() {
+    this.setState({
+      modalOpen: true
+    });
+  }
+
+  closeModal() {
+    this.setState({modalOpen: false});
+  }
+
+  handleYes () {
+    this.removeMember({deleteParticipations: true});
+    this.closeModal();
+  }
+  handleNo () {
+    this.closeModal();
   }
 
   navbar () {
@@ -121,15 +142,58 @@ class GroupDetail extends React.Component {
   }
 
   renderErrors() {
-    let errors = null;
-    if (this.props.errors) {
-      errors = (<ul className='auth-errors'>
+    let errors;
+    const ModalStyle = {
+  overlay : {
+    position          : 'fixed',
+    top               : '0px',
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    backgroundColor   : 'rgba(0,0,0,0.6)',
+    transition: 'all 0.5s'
+  },
+  content : {
+    padding: '0',
+    boxShadow: "20px 20px 20px",
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : 'auto',
+    backgroundColor       : '$gray',
+    transform             : 'translate(-50%, -50%)',
+    borderRadius          : '20px',
+    backgroundColor : '#EDE5E2'
+  }
+  };
+    if (this.props.errors.length > 0) {
+      if (this.props.errors[0] === 'ALERT') {
+        return (
+          <Modal
+            contentLabel='Modal'
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}
+            style={ModalStyle}
+            >
+            <div className='auth-form centered'>
+            <p className='event-detail-event-datetime modal-buttons'>You cannot join the events of the group if you leave. Do you want to leave all the joined upcoming events of this group?</p>
+            <div>
+              <div className='group-join-buttons modal-buttons' onClick={this.handleYes}>Yes, I will not join any of the events of this group</div>
+              <div className='group-join-buttons modal-buttons' onClick={this.handleNo}>No, I will stay in the group</div>
+            </div>
+            </div>
+        </Modal>
+        )
+      } else {
+        errors = (<ul className='auth-errors'>
         {this.props.errors.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}
       </ul>);
+      return(errors);
+      }
     }
-    return(errors);
   }
 
 
@@ -143,7 +207,7 @@ class GroupDetail extends React.Component {
         <li key={idx} className='group-info-items'>{organizer.username}</li>
       ));
       group.organizers.forEach(organizer => {
-        if (organizer.username === this.props.currentUser.username) {
+        if (this.props.currentUser && (organizer.username === this.props.currentUser.username)) {
           authRequiredActions = (
             <ul className='group-navbar'>
               <li><button className='group-navbar-item delete-edit' onClick={this.editGroup}>Edit Group</button></li>
@@ -212,7 +276,5 @@ class GroupDetail extends React.Component {
     );
   }
 }
-// {this.displayActivity(group)}
-// {this.displayActivity(group)}
 
 export default withRouter(GroupDetail);

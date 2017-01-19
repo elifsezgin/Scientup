@@ -16,7 +16,6 @@ const locationReducer = (state = _nullState, action) => {
       let lat = '';
       let lng = '';
       let bounds = [];
-      console.log(action.location);
       if (action.location.results[0]) {
         cityName = action.location.results[0].address_components[1].long_name;
         lat = action.location.results[0].geometry.location.lat;

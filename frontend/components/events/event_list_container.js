@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import EventList from './event_list';
 import {requestAllEvents} from '../../actions/event_actions';
-import {selectAllEvents} from '../../reducers/selectors';
+import {selectUpcomingAndPastEvents} from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  events: selectAllEvents(state),
+  events: selectUpcomingAndPastEvents(state),
   searchInput: state.search.searchInput,
   searchType: state.search.searchType
 });

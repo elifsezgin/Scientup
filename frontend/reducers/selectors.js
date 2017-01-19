@@ -17,19 +17,17 @@ export const selectAllEvents = ({ events }) => {
   return allEvents;
 };
 
-export const selectUpcomingAndPastEvents = ({ events, groupDetail }) => {
+export const selectUpcomingAndPastEvents = ({ events }) => {
 
   const allEvents = selectAllEvents({ events });
   const upcomingEvents = [];
   const pastEvents = [];
   allEvents.forEach((event)=>{
     const event_datetime = (event.date + 'T' + event.time.split('T')[1]);
-    if (groupDetail.id === event.group.id) {
-      if (Date.parse(event_datetime) > Date.now()) {
-        upcomingEvents.push(event);
-      } else {
-        pastEvents.push(event);
-      }
+    if (Date.parse(event_datetime) > Date.now()) {
+      upcomingEvents.push(event);
+    } else {
+      pastEvents.push(event);
     }
   });
   return [upcomingEvents, pastEvents];

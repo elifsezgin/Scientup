@@ -142,6 +142,7 @@
 .group-description {
   font-family: 'Source Sans Pro', sans-serif;
   color: $darkest-gray;
+  margin-top: 20px;
 }
 
 .events-header {
@@ -150,6 +151,7 @@
   font-weight:500;
   color:$darkest-gray;
   margin-top: 50px;
+  margin-bottom: 20px;
   text-shadow:1px 1px 0px white;
 }
 
@@ -230,6 +232,11 @@
   margin-left: 0px;
 }
 
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .group-creation-input {
   display:block;
   width: 90%;
@@ -290,4 +297,13 @@
     text-decoration:none;
     font-weight:400;
   }
+}
+
+.group-join-buttons:hover {
+  background-color: $darkest-gray;
+}
+
+.modal-buttons {
+  margin: 10px 0px 30px 0px;
+  font-family: 'Raleway',sans-serif;
 }

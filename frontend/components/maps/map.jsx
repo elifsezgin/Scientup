@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// const mapCenter = { lat: 37.7758, lng: -122.435 },
-// burritos = [
-// { lat: 37.775785, lng: -122.445979, name: "Papalote" },
-// { lat: 37.772045, lng: -122.437015, name: "The Little Chihuahua" },
-// { lat: 37.781899, lng: -122.410426, name: "Cancun" }
-// ];
-
 
 class Map extends React.Component {
   constructor(props) {
@@ -27,7 +20,6 @@ class Map extends React.Component {
     if (newProps.event) {
       this.addPlace(newProps.event);
     } else if (newProps.events) {
-      console.log(newProps.events);
       newProps.events.forEach(event => (
         this.addPlace(event)
     ));
