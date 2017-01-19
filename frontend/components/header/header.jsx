@@ -9,7 +9,8 @@ class Header extends React.Component {
     super(props);
     this.state = {
       modalOpen: false,
-			modalType: 'login'
+			modalType: 'login',
+      displayDropdown: 'invisible'
     };
 
     this.handleLogout = this.handleLogout.bind(this);
@@ -19,6 +20,7 @@ class Header extends React.Component {
     this.createGroup = this.createGroup.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
 
   }
 
@@ -84,8 +86,17 @@ class Header extends React.Component {
     this.setState({modalOpen: false});
   }
 
+  toggleDropdown() {
+    if (this.state.displayDropdown === "invisible"){
+      this.setState({ displayDropdown: 'visible' });
+    } else {
+      this.setState({ displayDropdown: 'invisible' });
+    }
+  }
+
 
   render() {
+    const dropdownClass = 'dropdown ' + this.state.displayDropdown;
     const loginLink = (<button
       key={1}
       className='header-buttons'
@@ -95,9 +106,16 @@ class Header extends React.Component {
       key={2}
       className='header-buttons'
       onClick={this.openModal.bind(this, 'signup')}>Sign up</button>);
-    const logoutLink = (<p key={4} onClick={this.handleLogout}><button className='header-buttons'>Log out</button></p>);
+    const dropdown = (<p key={4} onClick={this.toggleDropdown}><button className='header-buttons'>
+  <i className="fa fa-user" aria-hidden="true"></i>
+    <ul className={dropdownClass}>
+                    <Link to={`/profile`}
+                      className='link'><li>Profile</li></Link>
+                    <li onClick={this.handleLogout}>Log Out</li>
+                  </ul>
+  </button></p>);
 
-    const links = ( (this.props.currentUser) ? [logoutLink] : [loginLink, signupLink] );
+    const links = ( (this.props.currentUser) ? [dropdown] : [loginLink, signupLink] );
 
     const loginOrSignup = (
        (this.state.modalType === 'login') ? (<LoginFormContainer closeModal={this.closeModal} />) : (<SignupFormContainer closeModal={this.closeModal}  />)
