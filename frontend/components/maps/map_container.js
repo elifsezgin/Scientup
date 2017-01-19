@@ -2,11 +2,13 @@ import {connect} from 'react-redux';
 import Map from './map';
 
 const mapStateToProps = state => ({
-  lat: state.location.lat,
-  lng: state.location.lng,
-  bounds: state.location.bounds
+  event: state.eventDetail,
+  events: state.events,
 });
 
+// lat: state.location.lat,
+// lng: state.location.lng,
+// bounds: state.location.bounds
 const mapDispatchToProps = dispatch => ({
 
 });

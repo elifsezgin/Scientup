@@ -6,8 +6,8 @@ import {Link} from 'react-router';
 
 const GroupListItem = ({ title, imageUrl, groupId }) => {
   let groupItemStyle = {
-    width: "300px",
-    height: "200px",
+    width: "350px",
+    height: "250px",
     filter: "brightness(90%)",
     backgroundImage: `url(${imageUrl})`
   };

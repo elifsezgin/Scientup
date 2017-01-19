@@ -1,42 +1,62 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
+// const mapCenter = { lat: 37.7758, lng: -122.435 },
+// burritos = [
+// { lat: 37.775785, lng: -122.445979, name: "Papalote" },
+// { lat: 37.772045, lng: -122.437015, name: "The Little Chihuahua" },
+// { lat: 37.781899, lng: -122.410426, name: "Cancun" }
+// ];
+
 
 class Map extends React.Component {
   constructor(props) {
     super(props);
-    this.initMap = this.initMap.bind(this);
+    this.addPlace = this.addPlace.bind(this);
   }
 
-  initMap() {
-    let map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
-        });
-    let infoWindow = new google.maps.InfoWindow({map: map});
-    let pos = {
-             lat: this.props.lat,
-             lng: this.props.lng
-    };
+  componentWillReceiveProps(newProps) {
+    let lat = newProps.event.lat;
+    let lng = newProps.event.lng;
 
-     infoWindow.setPosition(pos);
-     infoWindow.setContent('Location found.');
-     map.setCenter(pos);
+    const map = (this.refs.map);
+    this.map = new google.maps.Map(map, {
+      center: {lat: lat, lng: lng},
+      zoom: 14
+    });
+    if (newProps.event) {
+      this.addPlace(newProps.event);
+    } else if (newProps.events) {
+      console.log(newProps.events);
+      newProps.events.forEach(event => (
+        this.addPlace(event)
+    ));
+    }
   }
+
+  addPlace(eventItem) {
+    // debugger;
+    console.log(eventItem);
+    const pos = new google.maps.LatLng(eventItem.lat, eventItem.lng);
+          //then we use our new instance of LatLng to make a marker
+    const marker = new google.maps.Marker({
+            position: pos,
+            //set map to this.map, this is what adds it to the map
+            //when we want to remove this marker, we need to set its
+            //map property to null using myMarker.setMap(null)
+            map: this.map
+          });
+
+    marker.addListener('click', () => {
+      alert(`clicked on: ${eventItem.name}`);
+    });
+  }
+
 
   render() {
-    const initMap = () => {
-      let uluru = {lat: -25.363, lng: 131.044};
-      let map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: uluru
-      });
-      let marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-      });
-    };
-    return(
-      <div id="map"></div>
 
+    return(
+      <div className="map" id='map' ref='map'>Map</div>
     );
   }
 }

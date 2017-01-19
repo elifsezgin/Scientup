@@ -14,8 +14,10 @@ class EventDetail extends React.Component {
     this.props.requestEvent(parseInt(this.props.params.eventId));
   }
 
-  componentWillReceiveProps() {
-    this.props.requestEvent(parseInt(this.props.params.eventId));
+  componentWillReceiveProps(newProps) {
+    if (this.props.params.eventId !== newProps.params.eventId) {
+      this.props.requestEvent(parseInt(newProps.params.eventId));
+    }
   }
 
   addParticipant () {
@@ -58,6 +60,7 @@ class EventDetail extends React.Component {
       date = this.props.event.date.replace('-', '/').replace('-', '/');
       participantsCount = this.props.event.participants.length;
     }
+
     return(
       <div className='event-detail-container'>
         <div className='event-detail-inner-container'>
@@ -70,6 +73,7 @@ class EventDetail extends React.Component {
         {this.joinLeaveEvent()}
         </div>
         <div key={6} className='event-detail-event-datetime'>{this.props.event.description}</div>
+
         <MapContainer />
       </div>
     );

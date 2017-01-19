@@ -4,7 +4,7 @@
   font-family: serif;
   display: flex;
   justify-content: space-between;
-  opacity: 0.8;
+  // opacity: 0.8;
   flex-direction: row;
   align-items: center;
 }
@@ -49,14 +49,14 @@
   flex-direction: column;
   h1 {
 
-    z-index: 5;
+    z-index: 0;
     display: block;
 
     font-family:  'Passion One', cursive;
     font-size: 80px;
   }
   h3 {
-
+    z-index: 0;
     font-size: 30px;
     display: block;
     font-family: 'Raleway', sans-serif;
@@ -93,11 +93,7 @@
   box-shadow:0px 3px 0px $light-blue;
   transition: all .3s ease-in-out;
   color: $white;
-  a, a:visited {
-    color: $white;
-    text-decoration:none;
-    font-weight:400;
-  }
+
 }
 
 .header-buttons:hover {
@@ -170,4 +166,11 @@
   h3 {
     font-family: 'Raleway', sans-serif;
   }
+}
+
+.map {
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+  height: 400px;
 }

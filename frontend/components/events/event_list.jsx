@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import EventListItem from './event_list_item';
+import MapContainer from '../maps/map_container';
 
 class EventList extends React.Component {
   constructor(props) {
@@ -9,6 +10,12 @@ class EventList extends React.Component {
 
   componentDidMount () {
     this.props.requestAllEvents();
+  }
+
+  componentWillReceiveProps(newProps)  {
+    if (this.props.searchInput !== newProps.searchInput) {
+      this.props.requestAllEvents({searchInput: newProps.searchInput});
+    }
   }
 
 

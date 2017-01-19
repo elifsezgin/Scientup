@@ -4,10 +4,13 @@ import {requestAllEvents} from '../../actions/event_actions';
 import {selectAllEvents} from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  events: selectAllEvents(state)
+  events: selectAllEvents(state),
+  searchInput: state.search.searchInput,
+  searchType: state.search.searchType
 });
 const mapDispatchToProps = dispatch => ({
-  requestAllEvents: () => dispatch(requestAllEvents())
+  requestAllEvents: (data) => dispatch(requestAllEvents(data))
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventList);

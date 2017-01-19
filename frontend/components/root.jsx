@@ -11,6 +11,7 @@ import NewGroupContainer from './groups/new_group_container';
 import NewEventContainer from './events/new_event_container';
 import EventDetailContainer from './events/event_detail_container';
 import GroupInfoContainer from './groups/group_info_container';
+import ProfileContainer from './users/profile_container';
 
 
 const Root = ({store}) => {
@@ -59,7 +60,10 @@ const Root = ({store}) => {
               component={ EventDetailContainer }
               onEnter={_ensureLoggedIn}/>
           </Route>
-
+          <Route
+            path='profile'
+            component={ProfileContainer}
+            onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>

@@ -18,6 +18,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    render 'api/users/profile.json.jbuilder'
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)

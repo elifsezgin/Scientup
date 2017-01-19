@@ -78,51 +78,124 @@ Membership.create!(user_id: user4.id, group_id: group6.id)
 Membership.create!(user_id: user5.id, group_id: group6.id)
 Membership.create!(user_id: user6.id, group_id: group6.id)
 
-Event.create!(name: "Evolution Conference", description: "The conference is the premier opportunity for the presentation and discussion of scientific research in all areas of evolutionary biology. It features numerous contributed talks (14 min. 'regular' and 5 min. 'lightning'), multiple society-selected symposia with invited speakers on specific themes, several poster sessions, and keynote addresses including from the Presidents of each society and one or more public outreach seminars. We welcome all people interested.", date: "2017-02-12", time: "2000-01-01 18:00:00", group_id: group1.id)
-Event.create!(name: "Big Data Talks", description: "We will be talking about handling Big Data. We welcome all people interested.", date: "2017-01-24", time: "2000-01-01 18:00:00", group_id: group2.id)
-Event.create!(name: "Deep Learning Summit", description: "Discover advances in deep learning algorithms and methods from the world's leading innovators. Learn from industry experts in speech & pattern recognition, neural networks, image analysis and NLP. Explore how deep learning will impact healthcare, manufacturing, search & transportation.", date: "2017-01-27", time: "2000-01-01 18:00:00", group_id: group2.id)
-Event.create!(name: "Innovations in 2017", description: "We will be discussing the innovations of 2017. The topics we will be talking about includes ;
+event1 = Event.create!(
+name: "Evolution Conference",
+description: "The conference is the premier opportunity for the presentation and discussion of scientific research in all areas of evolutionary biology. It features numerous contributed talks (14 min. 'regular' and 5 min. 'lightning'), multiple society-selected symposia with invited speakers on specific themes, several poster sessions, and keynote addresses including from the Presidents of each society and one or more public outreach seminars. We welcome all people interested.",
+date: "2017-02-12",
+time: "2000-01-01 18:00:00",
+lat: 37.792231,
+lng: -122.397562,
+address: '298 Market Street',
+group_id: group1.id)
+event2 = Event.create!(
+name: "Big Data Talks",
+description: "We will be talking about handling Big Data. We welcome all people interested.",
+date: "2017-01-24",
+time: "2000-01-01 18:00:00",
+lat: 37.798268,
+lng: -122.403377,
+address: '371 Broadway',
+group_id: group2.id)
+event3 = Event.create!(
+name: "Deep Learning Summit", description: "Discover advances in deep learning algorithms and methods from the world's leading innovators. Learn from industry experts in speech & pattern recognition, neural networks, image analysis and NLP. Explore how deep learning will impact healthcare, manufacturing, search & transportation.",
+date: "2017-01-27",
+time: "2000-01-01 18:00:00",
+lat: 37.794516,
+lng: -122.411393,
+address: '1199 Mason Street',
+group_id: group2.id)
+event4 = Event.create!(
+name: "Innovations in 2017",
+description: "We will be discussing the innovations of 2017. The topics we will be talking about includes ;
 • Flexible hybrid electronics
 • Emerging materials and devices for large-area electronics
 • Energy harvesting and storage
 • Bioelectronics for applications in healthcare
-• Internet of Things and large-area electronic sensor technologies", date: "2017-01-27", time: "2000-01-01 18:00:00", group_id: group3.id)
-Event.create!(name: "Young Researcher Workshop on Geometry, Mechanics, and Control", description: "Our goal is to bring together young researchers working in geometry, mechanics and control theory and to offer a platform to present the results of their research to an international audience.", date: "2017-01-24", time: "2000-01-01 18:00:00", group_id: group4.id)
-Event.create!(name: "Model theory and applications", description: "This conference will be dedicated to model theory and its applications to algebra and other branches of mathematics. It will be the opportunity to review some lines of the subject as well as to focus on its recent developments. The panel of invited speakers reflects the large diversity of applications.", date: "2017-02-27", time: "2000-01-01 18:00:00", group_id: group4.id)
-Event.create!(name: "Conference of Materials Chemistry", description: "The 'MC' conference series has provided a showcase for materials chemistry for two decades, and is the flagship event of the RSC's Materials Chemistry Division", date: "2017-01-24", time: "2000-01-01 18:00:00", group_id: group5.id)
+• Internet of Things and large-area electronic sensor technologies",
+date: "2017-01-27",
+time: "2000-01-01 18:00:00",
+lat: 37.787901,
+lng: -122.4291201,
+address: '1814 Bush Street',
+group_id: group3.id)
+event5 = Event.create!(
+name: "Young Researcher Workshop on Geometry, Mechanics, and Control",
+description: "Our goal is to bring together young researchers working in geometry, mechanics and control theory and to offer a platform to present the results of their research to an international audience.",
+date: "2017-01-24",
+time: "2000-01-01 18:00:00",
+lat: 37.794516,
+lng: -122.411393,
+address: '1199 Mason Street',
+group_id: group4.id)
+event6 = Event.create!(
+name: "Model theory and applications",
+description: "This conference will be dedicated to model theory and its applications to algebra and other branches of mathematics. It will be the opportunity to review some lines of the subject as well as to focus on its recent developments. The panel of invited speakers reflects the large diversity of applications.",
+date: "2017-02-27",
+time: "2000-01-01 18:00:00",
+lat: 37.787901,
+lng: -122.4291201,
+address: '1814 Bush Street',
+group_id: group4.id)
 
-Event.create!(name: "Ruby on Rails Tuesday", description: "We will be teaching Ruby on Rails and coding together. We welcome all levels.", date: "2017-01-24", time: "2000-01-01 18:00:00", group_id: group6.id)
-Event.create!(name: "Javascript Friday", description: "We will be teaching Javascript and coding together. We welcome all levels.", date: "2017-01-27", time: "2000-01-01 18:00:00", group_id: group6.id)
+event7 = Event.create!(
+name: "Conference of Materials Chemistry",
+description: "The 'MC' conference series has provided a showcase for materials chemistry for two decades, and is the flagship event of the RSC's Materials Chemistry Division",
+date: "2017-01-24",
+time: "2000-01-01 18:00:00",
+lat: 37.798268,
+lng: -122.403377,
+address: '371 Broadway',
+group_id: group5.id)
+
+event8 = Event.create!(
+name: "Ruby on Rails Tuesday",
+description: "We will be teaching Ruby on Rails and coding together. We welcome all levels.",
+date: "2017-01-24",
+time: "2000-01-01 18:00:00",
+lat: 37.792231,
+lng: -122.397562,
+address: '298 Market Street',
+group_id: group6.id)
+
+event9 = Event.create!(
+name: "Javascript Friday",
+description: "We will be teaching Javascript and coding together. We welcome all levels.",
+date: "2017-01-27",
+time: "2000-01-01 18:00:00",
+lat: 37.794516,
+lng: -122.411393,
+address: '1199 Mason Street',
+group_id: group6.id)
 
 
-Participation.create!(user_id: user1.id, event_id: 1)
-Participation.create!(user_id: user2.id, event_id: 1)
-Participation.create!(user_id: user3.id, event_id: 1)
-Participation.create!(user_id: user4.id, event_id: 1)
-Participation.create!(user_id: user5.id, event_id: 1)
-Participation.create!(user_id: user6.id, event_id: 1)
-Participation.create!(user_id: user7.id, event_id: 1)
-Participation.create!(user_id: user1.id, event_id: 2)
-Participation.create!(user_id: user2.id, event_id: 2)
-Participation.create!(user_id: user3.id, event_id: 2)
-Participation.create!(user_id: user4.id, event_id: 2)
-Participation.create!(user_id: user5.id, event_id: 2)
-Participation.create!(user_id: user6.id, event_id: 2)
-Participation.create!(user_id: user7.id, event_id: 2)
-Participation.create!(user_id: user1.id, event_id: 3)
-Participation.create!(user_id: user2.id, event_id: 3)
-Participation.create!(user_id: user3.id, event_id: 3)
-Participation.create!(user_id: user4.id, event_id: 3)
-Participation.create!(user_id: user5.id, event_id: 3)
-Participation.create!(user_id: user2.id, event_id: 4)
-Participation.create!(user_id: user3.id, event_id: 4)
-Participation.create!(user_id: user1.id, event_id: 4)
-Participation.create!(user_id: user5.id, event_id: 5)
-Participation.create!(user_id: user6.id, event_id: 5)
-Participation.create!(user_id: user7.id, event_id: 5)
-Participation.create!(user_id: user1.id, event_id: 5)
-Participation.create!(user_id: user5.id, event_id: 6)
-Participation.create!(user_id: user6.id, event_id: 7)
-Participation.create!(user_id: user7.id, event_id: 7)
-Participation.create!(user_id: user1.id, event_id: 7)
-Participation.create!(user_id: user4.id, event_id: 7)
+Participation.create!(user_id: user1.id, event_id: event1.id)
+Participation.create!(user_id: user2.id, event_id: event1.id)
+Participation.create!(user_id: user3.id, event_id: event1.id)
+Participation.create!(user_id: user4.id, event_id: event1.id)
+Participation.create!(user_id: user5.id, event_id: event1.id)
+Participation.create!(user_id: user6.id, event_id: event1.id)
+Participation.create!(user_id: user7.id, event_id: event1.id)
+Participation.create!(user_id: user1.id, event_id: event2.id)
+Participation.create!(user_id: user2.id, event_id: event2.id)
+Participation.create!(user_id: user3.id, event_id: event2.id)
+Participation.create!(user_id: user4.id, event_id: event2.id)
+Participation.create!(user_id: user5.id, event_id: event2.id)
+Participation.create!(user_id: user6.id, event_id: event2.id)
+Participation.create!(user_id: user7.id, event_id: event2.id)
+Participation.create!(user_id: user1.id, event_id: event3.id)
+Participation.create!(user_id: user2.id, event_id: event3.id)
+Participation.create!(user_id: user3.id, event_id: event3.id)
+Participation.create!(user_id: user4.id, event_id: event3.id)
+Participation.create!(user_id: user5.id, event_id: event3.id)
+Participation.create!(user_id: user2.id, event_id: event4.id)
+Participation.create!(user_id: user3.id, event_id: event4.id)
+Participation.create!(user_id: user1.id, event_id: event4.id)
+Participation.create!(user_id: user5.id, event_id: event5.id)
+Participation.create!(user_id: user6.id, event_id: event5.id)
+Participation.create!(user_id: user7.id, event_id: event5.id)
+Participation.create!(user_id: user1.id, event_id: event5.id)
+Participation.create!(user_id: user5.id, event_id: event6.id)
+Participation.create!(user_id: user6.id, event_id: event7.id)
+Participation.create!(user_id: user7.id, event_id: event7.id)
+Participation.create!(user_id: user1.id, event_id: event7.id)
+Participation.create!(user_id: user4.id, event_id: event7.id)

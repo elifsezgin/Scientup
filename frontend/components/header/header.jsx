@@ -95,8 +95,6 @@ class Header extends React.Component {
       key={2}
       className='header-buttons'
       onClick={this.openModal.bind(this, 'signup')}>Sign up</button>);
-
-    // const demoLink = (<p key={3} onClick={this.handleDemo}><button className='header-buttons'>Demo</button></p>);
     const logoutLink = (<p key={4} onClick={this.handleLogout}><button className='header-buttons'>Log out</button></p>);
 
     const links = ( (this.props.currentUser) ? [logoutLink] : [loginLink, signupLink] );
@@ -108,15 +106,15 @@ class Header extends React.Component {
     const ModalStyle = {
   overlay : {
     position          : 'fixed',
-    top               : '70px',
+    top               : '0px',
     left              : 0,
     right             : 0,
     bottom            : 0,
-    backgroundColor   : 'transparent',
+    backgroundColor   : 'rgba(0,0,0,0.6)',
+    transition: 'all 0.5s'
   },
   content : {
     padding: '0',
-    opacity: '0.9',
     boxShadow: "20px 20px 20px",
     top                   : '50%',
     left                  : '50%',

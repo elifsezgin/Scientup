@@ -13,8 +13,8 @@ export const receiveEvent = (event) => ({
   event
 });
 
-export const requestAllEvents = () => dispatch => (
-  EventsAPIUtil.eventsSearch().then(events => dispatch(receiveEvents(events)))
+export const requestAllEvents = (data) => dispatch => (
+  EventsAPIUtil.eventsSearch(data).then(events => dispatch(receiveEvents(events)))
 );
 
 export const requestEvent = (id) => dispatch => (
