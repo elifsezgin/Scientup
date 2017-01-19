@@ -11,9 +11,24 @@ class Api::MembershipsController < ApplicationController
 
   def destroy
     @membership = Membership.find_by(user_id: current_user.id, group_id: params[:id])
-    @membership.delete
-    @group = Group.find(params[:id])
-    render 'api/groups/show.json.jbuilder'
+    participations = Participation.find_by_sql([<<-SQL, params[:id], current_user.id])
+      SELECT
+        participations.*
+      FROM
+        participations
+      JOIN
+        events ON participations.event_id = events.id
+      WHERE
+        group_id = ? AND user_id = ?
+    SQL
+    # debugger
+    if participations.empty?
+      @membership.delete
+      @group = Group.find(params[:id])
+      render 'api/groups/show.json.jbuilder'
+    else
+      render json: ['You cannot join the events of the group if you leave.'], status: 422
+    end
   end
 
   private

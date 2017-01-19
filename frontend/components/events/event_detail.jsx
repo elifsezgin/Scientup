@@ -8,6 +8,7 @@ class EventDetail extends React.Component {
     this.addParticipant = this.addParticipant.bind(this);
     this.removeParticipant = this.removeParticipant.bind(this);
     this.joinLeaveEvent = this.joinLeaveEvent.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount () {
@@ -34,7 +35,6 @@ class EventDetail extends React.Component {
 
     if (this.props.event.participants) {
       this.props.event.participants.forEach(participant => {
-        // debugger;
         if (participant.username === currentUser.username) {
           button = (<button
               className='event-join-buttons'
@@ -51,14 +51,27 @@ class EventDetail extends React.Component {
         );
     }
   }
+  renderErrors() {
+    let errors = null;
+    if (this.props.errors) {
+      errors = (<ul className='auth-errors'>
+        {this.props.errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+        ))}
+      </ul>);
+    }
+    return(errors);
+  }
+
 
   render () {
-    let time, date, participantsCount;
+    let time, date, participantsCount, location;
     if (this.props.event.time){
       const el = this.props.event.time.split('T')[1].split(':');
       time = el[0] + ':' + el[1];
       date = this.props.event.date.replace('-', '/').replace('-', '/');
       participantsCount = this.props.event.participants.length;
+      location = this.props.event.address;
     }
 
     return(
@@ -68,11 +81,13 @@ class EventDetail extends React.Component {
         </div>
         <div key={3} className='event-detail-event-datetime'>Date : {date}</div>
         <div key={4} className='event-detail-event-datetime'>Time : {time}</div>
-        <div key={5} className='event-detail-participation'>
+        <div key={5} className='event-detail-event-datetime'>Location : {location}</div>
+
+        <div key={6} className='event-detail-participation'>
           <div>{participantsCount} people are going</div>
         {this.joinLeaveEvent()}
         </div>
-        <div key={6} className='event-detail-event-datetime'>{this.props.event.description}</div>
+        <div key={7} className='event-detail-event-datetime'>{this.props.event.description}</div>
 
         <MapContainer />
       </div>

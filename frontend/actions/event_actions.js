@@ -1,4 +1,5 @@
 import * as EventsAPIUtil from "../util/events_api_util";
+import {receiveErrors} from './session_actions';
 
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
@@ -22,13 +23,15 @@ export const requestEvent = (id) => dispatch => (
 );
 
 export const createEvent = (event) => dispatch => (
-  EventsAPIUtil.createEvent(event).then(data => dispatch(receiveEvent(data)))
+  EventsAPIUtil.createEvent(event).then(data => dispatch(receiveEvent(data)), err =>
+  dispatch(receiveErrors(err.responseJSON)))
 );
 
 
 export const addParticipant = (info) => dispatch => (
-  EventsAPIUtil.addParticipant(info).then(data => (
-      dispatch(receiveEvent(data))))
+  EventsAPIUtil.addParticipant(info).then(data =>
+      dispatch(receiveEvent(data)), err =>
+      dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const deleteParticipant = (id) => dispatch => (

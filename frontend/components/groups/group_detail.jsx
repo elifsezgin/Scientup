@@ -19,10 +19,18 @@ class GroupDetail extends React.Component {
     this.addMember = this.addMember.bind(this);
     this.removeMember = this.removeMember.bind(this);
     this.joinLeaveGroup = this.joinLeaveGroup.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount () {
     this.props.requestGroup(parseInt(this.props.params.groupId));
+  }
+
+  componentWillUnmount () {
+    // if (newProps.errors !== this.props.errors) {
+      this.props.clearErrors();
+
+    // }
   }
 
   deleteGroup () {
@@ -110,8 +118,20 @@ class GroupDetail extends React.Component {
           <GroupInfoContainer />
         );
     }
-
   }
+
+  renderErrors() {
+    let errors = null;
+    if (this.props.errors) {
+      errors = (<ul className='auth-errors'>
+        {this.props.errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+        ))}
+      </ul>);
+    }
+    return(errors);
+  }
+
 
 
   render(){
@@ -182,6 +202,7 @@ class GroupDetail extends React.Component {
               </div>
             </div>
             <div className='group-detail'>
+              {this.renderErrors()}
               {(this.props.children) ? this.props.children : this.navbar() }
             </div>
 
