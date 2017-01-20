@@ -17,7 +17,7 @@ Feel free to browse at [ScientUp Live]
  - See member counts of groups
 * [Events](#events)
 - Geocoding -reverse geocoding in the event creation page
- - Create, Read, Update, Delete (admin only)
+ - Create, join (members only)
  - Add a rating
 * [HomePage](#homepage)
  - Realtime search groups or events on index page
@@ -63,7 +63,7 @@ The Search field dynamically renders the items of groups or events according to 
 On the header, you have a link to create a new Scientup, a button to log out or view your profile page, a home button and a logo link that takes you back to the home page, which are present in every page on the website once you are logged in.
 
 #### Groups Home Page:
-<img src='' width='100%'/>
+<img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1484954244/Screen_Shot_2017-01-20_at_3.16.05_PM_ni4zis.png' width='100%'/>
 
 
 #### Events Home Page:
@@ -82,9 +82,9 @@ Adding a feature that allows users to pick categories for their group. Modifying
 
 In addition to events being location-based, I am planning to also make the groups location based, using the city name data I already obtain from user in the event creation page. I will use reverse-geocoding to get the location from the city name attribute of groups. Search will also look for the groups & events in the close proximity.
 
-### Calender
+### Calendar
 
-I will add a calender to the events listings page, so that it will be easier for users to select for the events.
+I will add a calendar to the events listings page, so that it will be easier for users to select for the events.
 
 ### Event Comments
 

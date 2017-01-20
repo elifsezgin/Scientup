@@ -7,8 +7,6 @@ export const selectAllGroups = ({ groups }) => {
 export const selectAllEvents = ({ events }) => {
   const allEvents = (values(events));
   allEvents.sort(function(a,b){
-  // Turn your strings into dates, and then subtract them
-  // to get a value that is either negative, positive, or zero.
   const a_datetime = (a.date + 'T' + a.time.split('T')[1]);
   const b_datetime = (b.date + 'T' + b.time.split('T')[1]);
 
@@ -18,21 +16,20 @@ export const selectAllEvents = ({ events }) => {
 };
 
 export const selectUpcomingAndPastEvents = ({ events, groupDetail }) => {
-
   const allEvents = selectAllEvents({ events });
   const upcomingEvents = [];
   const pastEvents = [];
-  allEvents.forEach((event)=>{
-    const event_datetime = (event.date + 'T' + event.time.split('T')[1]);
+  allEvents.forEach((e) =>{
+    const event_datetime = (e.date + 'T' + e.time.split('T')[1]);
     if (groupDetail) {
-      if (event.group.id !== groupDetail.id) {
+      if (e.group.id !== groupDetail.id) {
         return;
       }
     }
     if (Date.parse(event_datetime) > Date.now()) {
-      upcomingEvents.push(event);
+      upcomingEvents.push(e);
     } else {
-      pastEvents.push(event);
+      pastEvents.push(e);
     }
   });
   return [upcomingEvents, pastEvents];

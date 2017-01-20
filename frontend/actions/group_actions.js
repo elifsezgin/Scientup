@@ -48,6 +48,12 @@ export const createGroup = (group) => dispatch => (
     err => dispatch(receiveErrors(err.responseJSON)))
 );
 
+export const updateGroup = (group) => dispatch => (
+  GroupsAPIUtil.updateGroup(group).then(data => (
+      dispatch(receiveGroup(data))),
+    err => dispatch(receiveErrors(err.responseJSON)))
+);
+
 export const deleteGroup = (id) => dispatch => (
   GroupsAPIUtil.deleteGroup(id).then(data => (
       dispatch(receiveGroups(data))))

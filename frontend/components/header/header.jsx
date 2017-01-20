@@ -111,7 +111,7 @@ class Header extends React.Component {
     <ul className={dropdownClass}>
                     <Link to={`/profile`}
                       className='link front'><li>Profile</li></Link>
-                    <li className='front'onClick={this.handleLogout}>Log Out</li>
+                    <li className='front' onClick={this.handleLogout}>Log Out</li>
           </ul>
   </button></p>);
 

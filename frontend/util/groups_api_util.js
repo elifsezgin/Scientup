@@ -21,6 +21,14 @@ export const createGroup = (group) => (
   })
 );
 
+export const updateGroup = (group) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/groups/${parseInt(group.id)}`,
+    data: {group}
+  })
+);
+
 export const deleteGroup = (id) => (
   $.ajax({
     method: 'DELETE',

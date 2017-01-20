@@ -14,7 +14,6 @@ class GroupDetail extends React.Component {
       modalOpen: false
     };
     this.deleteGroup = this.deleteGroup.bind(this);
-    this.editGroup = this.editGroup.bind(this);
     this.groupDetail = this.groupDetail.bind(this);
     this.members = this.members.bind(this);
     this.organizators = this.organizators.bind(this);
@@ -57,10 +56,6 @@ class GroupDetail extends React.Component {
     this.setState({navbar: 'past'});
   }
 
-  editGroup () {
-    // TODO: should render new group page with filled in data
-  }
-
   addMember () {
     this.props.addMember({group_id: this.props.group.id, user_id: this.props.currentUser.id}).then(()=>
   this.props.clearErrors(), err =>
@@ -69,8 +64,8 @@ class GroupDetail extends React.Component {
 
   removeMember (data) {
     this.props.deleteMember(this.props.group.id, data).then(()=>
-  this.props.clearErrors(),  err =>
-  this.openModal());
+    this.props.clearErrors(),  err =>
+    this.openModal());
   }
 
   joinLeaveGroup () {
@@ -229,7 +224,7 @@ class GroupDetail extends React.Component {
         if (this.props.currentUser && (organizer.username === this.props.currentUser.username)) {
           authRequiredActions = (
             <ul className='group-navbar'>
-              <li className='group-join-buttons' onClick={this.editGroup}>Edit Group</li>
+              <Link to={`groups/${group.id}/edit`} className='group-join-buttons link'>Edit Group</Link>
               <li className='group-join-buttons' onClick={this.deleteGroup}>Delete Group</li>
             </ul>
           );

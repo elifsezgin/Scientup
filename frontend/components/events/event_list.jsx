@@ -24,8 +24,8 @@ class EventList extends React.Component {
     let mapDisplayUpcomingEvents = upcomingEvents;
     let pastEvents = this.props.events[1];
     if (this.props.group) {
-      upcomingEvents = this.props.events[0].filter((event)=> {
-        return (event.group.id === this.props.group.id);
+      upcomingEvents = this.props.events[0].filter(eventItem=> {
+        return (eventItem.group.id === this.props.group.id);
       });
       pastEvents = this.props.events[1].filter((event)=> {
         return (event.group.id === this.props.group.id);

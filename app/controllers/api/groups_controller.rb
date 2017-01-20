@@ -10,6 +10,16 @@ class Api::GroupsController < ApplicationController
   end
 
   def update
+    @group = Group.find(params[:id])
+    if Organization.find_by(user_id: current_user.id, group_id: @group.id)
+      if @group.update(group_params)
+        render 'api/groups/show.json.jbuilder'
+      else
+        render json: @group.errors.full_messages, status: 422
+      end
+    else
+      render json: ['You are not an admin of the group.'], status: 422
+    end
   end
 
   def index
@@ -22,6 +32,8 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
+
+    # debugger
     @group = Group.find(params[:id])
     render 'api/groups/show.json.jbuilder'
   end
@@ -34,6 +46,6 @@ class Api::GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:title, :description, :city_name, :image_url)
+    params.require(:group).permit(:id, :title, :description, :city_name, :image_url)
   end
 end

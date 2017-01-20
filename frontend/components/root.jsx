@@ -8,6 +8,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GroupDetailContainer from './groups/group_detail_container';
 import NewGroupContainer from './groups/new_group_container';
+import EditGroupContainer from './groups/edit_group_container';
 import NewEventContainer from './events/new_event_container';
 import EventDetailContainer from './events/event_detail_container';
 import GroupInfoContainer from './groups/group_info_container';
@@ -46,6 +47,10 @@ const Root = ({store}) => {
           <Route
             path='groups/new'
             component={ NewGroupContainer }
+            onEnter={_ensureLoggedIn} />
+          <Route
+            path='groups/:groupId/edit'
+            component={ EditGroupContainer }
             onEnter={_ensureLoggedIn} />
           <Route
             path='groups/:groupId'
