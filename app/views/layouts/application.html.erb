@@ -4,10 +4,13 @@
   <title>Scientup</title>
   <!-- <script src="https://maps.googleapis.com/maps/api/js" charset="utf-8"></script> -->
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaygxrYf8wtpoLyo3s7sEXA4kK-YGW9jI"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaygxrYf8wtpoLyo3s7sEXA4kK-YGW9jI&libraries=places"></script>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css?family=Passion+One|Raleway" rel="stylesheet">
+  <link rel="icon"
+  type="image/png"
+  href="<%= image_path("favicon.png") %>"
 </head>
 <body>
 

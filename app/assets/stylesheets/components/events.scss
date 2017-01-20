@@ -10,7 +10,6 @@
   position:relative;
   margin-top:0;
   text-align:center;
-
   padding:40px;
   border-radius:20px 0 0 0;
   h6 {
@@ -65,7 +64,7 @@
   display: inline-block;
   position:relative;
   float:left;
-  width:145px;
+  width:95%;
   margin-top:10px;
   background-color: $blue;
   color:#fff;
@@ -100,6 +99,13 @@
   background-color: $gray;
 }
 
+.set-width {
+  width: 55%;
+}
+
+.flex {
+  display: flex;
+}
 .event-list-item-date-time {
   display: flex;
   flex-direction: column;
@@ -107,7 +113,6 @@
 }
 
 .event-list-item-time {
-
   font-family:monospace;
 }
 .event-list-item-date {

@@ -13,6 +13,7 @@ class EventDetail extends React.Component {
 
   componentDidMount () {
     this.props.requestEvent(parseInt(this.props.params.eventId));
+    this.props.clearErrors();
   }
 
   componentWillReceiveProps(newProps) {
@@ -92,7 +93,7 @@ class EventDetail extends React.Component {
         </div>
         <div key={7} className='event-detail-event-datetime'>{this.props.event.description}</div>
 
-        <MapContainer />
+        <MapContainer event={this.props.event}/>
       </div>
     );
   }

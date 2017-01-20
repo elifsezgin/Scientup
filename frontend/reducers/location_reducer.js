@@ -3,8 +3,8 @@ import merge from "lodash/merge";
 
 const _nullState = {
   cityName: 'San Francisco',
-  lat: '37.7576171',
-  lng: '-122.5776844',
+  lat: 37.773972,
+  lng: -122.431297,
   bounds: [],
 };
 
@@ -18,8 +18,8 @@ const locationReducer = (state = _nullState, action) => {
       let bounds = [];
       if (action.location.results[0]) {
         cityName = action.location.results[0].address_components[1].long_name;
-        lat = action.location.results[0].geometry.location.lat;
-        lng = action.location.results[0].geometry.location.lng;
+        lat = parseInt(action.location.results[0].geometry.location.lat);
+        lng = parseInt(action.location.results[0].geometry.location.lng);
         bounds = action.location.results[0].geometry.bounds;
       }
       return {cityName, lat, lng, bounds};

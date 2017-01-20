@@ -5,7 +5,8 @@ import {clearErrors} from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
   group_id: state.groupDetail.id,
-  errors: state.errors
+  errors: state.errors,
+  location: state.location
 });
 const mapDispatchToProps = dispatch => ({
   createEvent: (event) => dispatch(createEvent(event)),

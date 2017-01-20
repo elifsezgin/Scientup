@@ -38,7 +38,7 @@ class Home extends React.Component {
     if (this.state.fetchAction === 'groups') {
       return(<GroupListContainer />);
     } else {
-      return(<EventListContainer />);
+      return(<EventListContainer display='all'/>);
     }
   }
 

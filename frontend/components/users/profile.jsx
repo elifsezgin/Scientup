@@ -13,7 +13,6 @@ class Profile extends React.Component {
 
   // componentWillReceiveProps (newProps) {
   //   // if (typeof newProps.profile === 'undefined') {
-  //   //   debugger;
   //   this.props.requestProfile(newProps.currentUser.id);
   //   // }
   // }

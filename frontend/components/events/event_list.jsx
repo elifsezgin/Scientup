@@ -21,6 +21,7 @@ class EventList extends React.Component {
 
   render () {
     let upcomingEvents = this.props.events[0];
+    let mapDisplayUpcomingEvents = upcomingEvents;
     let pastEvents = this.props.events[1];
     if (this.props.group) {
       upcomingEvents = this.props.events[0].filter((event)=> {
@@ -52,11 +53,17 @@ class EventList extends React.Component {
       switch (this.props.display) {
         case 'all':
         return (
-          <div className="event-list">
-            <p className='group-description'>Upcoming events:</p>
-            {upcomingEvents}
-            <p className='group-description'>Past events:</p>
-            {pastEvents}
+          <div className="flex">
+            <div className='set-width'>
+              <p className='group-description'>Upcoming events:</p>
+              {upcomingEvents}
+
+              <p className='group-description'>Past events:</p>
+              {pastEvents}
+            </div>
+              <div className='map-on-events-index'>
+                <MapContainer events={mapDisplayUpcomingEvents} />
+              </div>
           </div>
         );
         case 'upcoming':
@@ -89,7 +96,7 @@ class EventList extends React.Component {
     return (
       <div>
         {eventList()}
-        {this.props.children}
+      {this.props.children}
       </div>
     );
   }
