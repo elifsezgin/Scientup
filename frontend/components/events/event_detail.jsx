@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router';
+import {Link, withRouter} from 'react-router';
 import MapContainer from '../maps/map_container';
 
 class EventDetail extends React.Component {
@@ -69,19 +69,59 @@ class EventDetail extends React.Component {
 
 
   render () {
-    let time, date, participantsCount, location;
-    if (this.props.event.time){
-      const el = this.props.event.time.split('T')[1].split(':');
-      time = el[0] + ':' + el[1];
-      date = this.props.event.date.replace('-', '/').replace('-', '/');
-      participantsCount = this.props.event.participants.length;
-      location = this.props.event.address;
+    const event = this.props.event;
+    if (!event) {
+      return (
+        <div></div>
+      );
     }
+    let time, date, participantsCount, location;
+    if (event.time){
+      const el = event.time.split('T')[1].split(':');
+      time = el[0] + ':' + el[1];
+      const months = {
+        '01': 'January',
+        '02': 'February',
+        '03': 'March',
+        '04': 'April',
+        '05': 'May',
+        '06': 'June',
+        '07': 'July',
+        '08': 'August',
+        '09': 'September',
+        '10': 'October',
+        '11': 'November',
+        '12': 'December'
+      };
+      const parsedDate = event.date.split('-');
+      date = parsedDate[2] + ' ' +  months[parsedDate[1]] + ' ' + parsedDate[0];
+      participantsCount = event.participants.length;
+      location = event.address;
+    }
+
+    let authRequiredActions = null;
+    // if (event.host && this.props.currentUser && event.host.username === this.props.currentUser.username) {
+    //   let editEvent = (
+    //     <Link to={`groups/${group.id}/events/edit`} className='event-join-buttons link' onClick={this.editEvent}>Edit Event</Link>
+    //   );
+    //   let deleteEvent = (
+    //     <div className='event-join-buttons link' onClick={this.deleteEvent}>Edit Event</div>
+    //   );
+    //   authRequiredActions = (
+    //     <div>
+    //       {editEvent}
+    //       {deleteEvent}
+    //     </div>
+    //   );
+    //
+    // }
+
+
 
     return(
       <div className='event-detail-container'>
         <div className='event-detail-inner-container'>
-          <div key={1} className='event-detail-event-name'>{this.props.event.name}</div>
+          <div key={1} className='event-detail-event-name'>{event.name}</div>
         </div>
         <div key={3} className='event-detail-event-datetime'>Date : {date}</div>
         <div key={4} className='event-detail-event-datetime'>Time : {time}</div>
@@ -89,11 +129,12 @@ class EventDetail extends React.Component {
 
         <div key={6} className='event-detail-participation'>
           <div>{participantsCount} people are going</div>
+          {authRequiredActions}
         {this.joinLeaveEvent()}
         </div>
-        <div key={7} className='event-detail-event-datetime'>{this.props.event.description}</div>
+        <div key={7} className='event-detail-event-datetime'>{event.description}</div>
 
-        <MapContainer event={this.props.event}/>
+        <MapContainer event={event}/>
       </div>
     );
   }

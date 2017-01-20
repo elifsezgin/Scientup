@@ -220,6 +220,7 @@ class GroupDetail extends React.Component {
     }
     let organizators = null;
     let authRequiredActions = null;
+    let createEvent = null;
     if (group.organizers) {
       organizators = group.organizers.map((organizer, idx) => (
         <li key={idx} className='group-info-items'>{organizer.username}</li>
@@ -228,9 +229,19 @@ class GroupDetail extends React.Component {
         if (this.props.currentUser && (organizer.username === this.props.currentUser.username)) {
           authRequiredActions = (
             <ul className='group-navbar'>
-              <li><button className='group-navbar-item delete-edit' onClick={this.editGroup}>Edit Group</button></li>
-              <li><button className='group-navbar-item delete-edit' onClick={this.deleteGroup}>Delete Group</button></li>
+              <li className='group-join-buttons' onClick={this.editGroup}>Edit Group</li>
+              <li className='group-join-buttons' onClick={this.deleteGroup}>Delete Group</li>
             </ul>
+          );
+        }
+      });
+    }
+
+    if (group.members) {
+      group.members.forEach(member => {
+        if (this.props.currentUser && (member.username === this.props.currentUser.username)) {
+          createEvent = (
+            <Link to={`groups/${group.id}/events/new`} className='group-join-buttons link' onClick={this.newEvent}>Create Event</Link>
           );
         }
       });
@@ -282,7 +293,7 @@ class GroupDetail extends React.Component {
                 <p>{this.props.events[1].length}</p>
               </div>
               <div className='group-info-items'>
-                <Link to={`groups/${group.id}/events/new`} className='group-join-buttons link' onClick={this.newEvent}>Create Event</Link>
+                {createEvent}
               </div>
             </div>
             <div className='group-detail'>

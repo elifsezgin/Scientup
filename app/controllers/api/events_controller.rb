@@ -3,6 +3,7 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       Participation.create(event_id: @event.id, user_id: current_user.id)
+      EventHosting.create(event_id: @event.id, user_id: current_user.id)
       render 'api/events/show.json.jbuilder'
     else
       render json: @event.errors.full_messages, status: 422

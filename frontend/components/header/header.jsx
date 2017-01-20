@@ -50,8 +50,8 @@ class Header extends React.Component {
     if (this.props.currentUser) {
       return (
         <Link className='link' to='groups/new' >
-        <button className='header-buttons'>
-            <div>Create Group </div>
+        <button className='header-buttons margin-auto'>
+            <div className='margin-auto'>Create Group </div>
             <i className="fa fa-plus plus-icon" aria-hidden="true"></i>
 
         </button>
@@ -110,9 +110,9 @@ class Header extends React.Component {
   <i className="fa fa-user" aria-hidden="true"></i>
     <ul className={dropdownClass}>
                     <Link to={`/profile`}
-                      className='link'><li>Profile</li></Link>
-                    <li onClick={this.handleLogout}>Log Out</li>
-                  </ul>
+                      className='link front'><li>Profile</li></Link>
+                    <li className='front'onClick={this.handleLogout}>Log Out</li>
+          </ul>
   </button></p>);
 
     const links = ( (this.props.currentUser) ? [dropdown] : [loginLink, signupLink] );

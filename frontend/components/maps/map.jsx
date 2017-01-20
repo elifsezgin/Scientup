@@ -13,16 +13,18 @@ class Map extends React.Component {
   componentDidMount() {
     let lat = this.props.lat;
     let lng = this.props.lng;
-    if (this.props.event) {
+    if (this.props.event && Object.keys(this.props.event).length > 0) {
       lat = this.props.event.lat;
       lng = this.props.event.lng;
     }
 
+
     const map = (this.refs.map);
     this.map = new google.maps.Map(map, {
-      center: {lat: lat, lng: lng},
-      zoom: 8
+      center: {lat, lng},
+      zoom: 11
     });
+
     this.geocoder = new google.maps.Geocoder;
     this.infowindow = new google.maps.InfoWindow;
     this.bounds = new google.maps.LatLngBounds;
@@ -47,15 +49,10 @@ class Map extends React.Component {
       center: {lat: lat, lng: lng},
       zoom: 14
     });
-
-
-    // let totalLat = 0, totalLng = 0;
     if (newProps.event) {
       this.addPlace(newProps.event);
     } else if (newProps.events) {
       newProps.events.forEach(event => {
-        // totalLat += event.lat;
-        // totalLng += event.lng;
         this.addPlace(event);
     });
     }
@@ -76,7 +73,7 @@ class Map extends React.Component {
     this.bounds.extend(marker.position);
     let that = this;
     marker.addListener('click', () => {
-      that.infowindow.setContent('<Link className="link" to={`groups/${eventItem.group_id}/events/${eventItem.id}`}>{eventItem.name}</Link>');
+      that.infowindow.setContent(`<a className="link" href=#/groups/${eventItem.group.id}/events/${eventItem.id}>${eventItem.name}</a>`);
       that.infowindow.open(that.map, marker);
     });
 
@@ -85,10 +82,15 @@ class Map extends React.Component {
 
   getLocation (map) {
     map.addListener('click', (event) => {
+      // debugger;
       const lat = event.latLng.lat();
       const lng = event.latLng.lng();
-      this.props.handleLocationChange(lat, lng);
-      this.geocodeLatLng(this.geocoder, map, this.infowindow, lat, lng);
+      if (this.props.handleLocationChange) {
+        this.props.handleLocationChange(lat, lng);
+      }
+      if (this.props.handleAddressChange) {
+        this.geocodeLatLng(this.geocoder, map, this.infowindow, lat, lng);
+      }
     });
   }
 
@@ -99,7 +101,7 @@ class Map extends React.Component {
   this.geocoder.geocode({'location': latlng}, (results, status) => {
     if (status === 'OK') {
       if (results[1]) {
-        map.setZoom(11);
+        map.setZoom(14);
         const marker = new google.maps.Marker({
           position: latlng,
           map: map
@@ -124,6 +126,7 @@ class Map extends React.Component {
           map: resultsMap,
           position: results[0].geometry.location
         });
+        resultsMap.setZoom(14);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }

@@ -28,12 +28,12 @@ class Profile extends React.Component {
       groupsOwned = profile.groups_owned.map(data => (
         <Link to={`groups/${data.id}`} className='group-info-items link'>{data.title}</Link>
       ));
-      // <GroupListItem key={data.id} title={data.title} imageUrl={data.image_url} groupId={data.id} />
+
       eventsJoined = profile.events_joined.map(data => (
         <Link to={`groups/${data.group_id}/events/${data.id}`} className='group-info-items link'>{data.name}</Link>
       ));
     }
-    // <EventListItem event={data} group={data.group} />
+    
     return (
       <div>
         <div className='group-detail-page'>

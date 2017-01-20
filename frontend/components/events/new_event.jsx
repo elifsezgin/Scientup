@@ -122,14 +122,8 @@ class NewEvent extends React.Component {
                    onChange={this.update('time')}/>
                  <h6>THIRD STEP</h6>
           <label className='event-creation-labels'>
-            <i className="fa fa-calendar-check-o icons" aria-hidden="true"></i>
+            <i className="fa fa-map-marker icons" aria-hidden="true"></i>
             Where is your event going to take place?</label>
-
-
-
-
-
-
 
               <input className="event-creation-input"
                        type="text"
@@ -148,7 +142,7 @@ class NewEvent extends React.Component {
 
 
                    <label className='event-creation-labels'>
-                     <i className="fa fa-calendar-check-o icons" aria-hidden="true"></i>
+                     <i className="fa fa-location-arrow icons" aria-hidden="true"></i>
                      Latitude:</label>
                    <input id='lat' className="event-creation-input"
                             type="float"
@@ -157,7 +151,7 @@ class NewEvent extends React.Component {
                             disabled="disabled"/>
 
                           <label id='lng' className='event-creation-labels'>
-                    <i className="fa fa-calendar-check-o icons" aria-hidden="true"></i>
+                    <i className="fa fa-location-arrow icons" aria-hidden="true"></i>
                     Longitude:</label>
                   <input className="event-creation-input"
                            type="float"

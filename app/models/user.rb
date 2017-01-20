@@ -21,10 +21,12 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :organizations
   has_many :participations
+  has_many :event_hostings
 
   has_many :groups_joined, through: :memberships, source: :group
   has_many :groups_owned, through: :organizations, source: :group
   has_many :events_joined, through: :participations, source: :event
+  has_many :events_hosted, through: :event_hostings, source: :event
 
   after_initialize :ensure_session_token!
 
