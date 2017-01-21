@@ -6,9 +6,6 @@ const mapStateToProps = state => ({
   lng: state.location.lng,
 });
 
-// events: state.events,
-// event: state.eventDetail,
-// bounds: state.location.bounds
 const mapDispatchToProps = dispatch => ({
 
 });

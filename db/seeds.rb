@@ -427,7 +427,6 @@ lng: -122.411393,
 address: '1199 Mason Street',
 group_id: group1.id)
 
-# BURADA KALDIM
 
 event11 = Event.create!(
 name: "Evolution Conference Part 2",
