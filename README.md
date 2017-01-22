@@ -22,7 +22,7 @@ Feel free to browse at [Scient Up][scientuplive]
  - Add a rating
 * [HomePage](#homepage)
  - Realtime search groups or events on index page
-* [Authentication](#user-profiles)
+* [Authentication](#authentication)
  - Secure custom authentication system that hashes/salts passwords using BCrypt
  - Single-page sign up and login
  - Guest user login for exploration
