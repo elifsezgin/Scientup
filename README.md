@@ -17,7 +17,7 @@ Feel free to browse at [Scient Up][scientuplive]
  - See events of the group
  - See member counts of groups
 * [Events](#events)
-- Geocoding -reverse geocoding in the event creation page
+ - Geocoding -reverse geocoding in the event creation page
  - Create, join (members only)
  - Add a rating
 * [HomePage](#homepage)
