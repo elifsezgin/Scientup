@@ -82,7 +82,6 @@ class Map extends React.Component {
 
   getLocation (map) {
     map.addListener('click', (event) => {
-      // debugger;
       const lat = event.latLng.lat();
       const lng = event.latLng.lng();
       if (this.props.handleLocationChange) {

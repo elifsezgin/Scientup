@@ -11,29 +11,23 @@ class Profile extends React.Component {
     this.props.requestProfile(this.props.currentUser.id);
   }
 
-  // componentWillReceiveProps (newProps) {
-  //   // if (typeof newProps.profile === 'undefined') {
-  //   this.props.requestProfile(newProps.currentUser.id);
-  //   // }
-  // }
-
   render () {
     let profile, username, groupsJoined, eventsJoined, groupsOwned;
     if (this.props.profile) {
       profile = this.props.profile;
       username = profile.username;
       groupsJoined = profile.groups_joined.map(data => (
-        <Link to={`groups/${data.id}`} className='group-info-items link'>{data.title}</Link>
+        <Link key={data.id} to={`groups/${data.id}`} className='group-info-items link'>{data.title}</Link>
       ));
       groupsOwned = profile.groups_owned.map(data => (
-        <Link to={`groups/${data.id}`} className='group-info-items link'>{data.title}</Link>
+        <Link key={data.id} to={`groups/${data.id}`} className='group-info-items link'>{data.title}</Link>
       ));
 
       eventsJoined = profile.events_joined.map(data => (
-        <Link to={`groups/${data.group_id}/events/${data.id}`} className='group-info-items link'>{data.name}</Link>
+        <Link key={data.id} to={`groups/${data.group_id}/events/${data.id}`} className='group-info-items link'>{data.name}</Link>
       ));
     }
-    
+
     return (
       <div>
         <div className='group-detail-page'>

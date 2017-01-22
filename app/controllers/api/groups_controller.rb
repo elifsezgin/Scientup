@@ -32,8 +32,6 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-
-    # debugger
     @group = Group.find(params[:id])
     render 'api/groups/show.json.jbuilder'
   end
