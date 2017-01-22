@@ -1,6 +1,6 @@
-[scientuplive] : https://scientup.com
+[scientuplive]: https://scientup.com
 
-<img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1484891473/logo_jxknxl.png' width='150px'/>
+<img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1484891473/logo_jxknxl.png' width='200px'/>
 
 
 ScientUp is a full-stack web application that serves a purpuse of creating a scientific community for people where they can create and join science related groups and events to meet with like-minded people, inspired by Meetup. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a redux architectural framework on the frontend.
