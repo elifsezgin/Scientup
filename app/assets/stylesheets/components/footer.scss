@@ -1,0 +1,18 @@
+.github-icon {
+  margin: auto;
+
+  color: $darkest-gray;
+}
+
+.footer-container {
+  height: 90px;
+  font-size: 50px;
+  background-color: $light-gray;
+  font-family: serif;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
