@@ -11,7 +11,7 @@ Feel free to browse at [Scient Up][scientuplive]
 
 ## Features & Implementation
 
-* [ScientUps](#scientups)
+* [ScientUps](#scientups---the-core-of-scientup)
  - Join groups
  - Create, Update, Delete (admin only)
  - See events of the group
@@ -70,6 +70,11 @@ On the header, you have a link to create a new Scientup, a button to log out or 
 #### Events Home Page:
 <img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1484928691/Screen_Shot_2017-01-20_at_8.11.06_AM_b0tvqb.png' width='100%'/>
 
+### Authentication
+
+ScientUp uses a secure custom authentication system that hashes/salts passwords using BCrypt, react-modal for sign up and login, that does not redirects user in singup/login pages. It has a demo account for exploration that can be found in login-signup pages.
+
+<img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1485054998/Screen_Shot_2017-01-21_at_7.16.00_PM_mobvfn.png' width='100%'/>
 
 ## Future Directions for the Project
 
