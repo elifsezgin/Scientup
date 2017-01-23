@@ -10,5 +10,4 @@ const App = ({ children }) => (
     <Footer />
   </div>
 );
-
 export default App;
