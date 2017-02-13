@@ -17,16 +17,16 @@ class Welcome extends React.Component {
   }
 
   getLocation() {
-    if (navigator.geolocation) {
-      // Switch to https and then comment out these lines;
+    // Switch to https and then comment out these lines;
+    // if (navigator.geolocation) {
     //  navigator.geolocation.getCurrentPosition(this.showPosition);
-    } else {
+    // } else {
     //  return(<p>Geolocation is not supported by this browser.</p>);
-    }
+    // }
   }
 
   showPosition(position)  {
-    this.props.getLocation(position.coords.latitude, position.coords.longitude);
+    // this.props.getLocation(position.coords.latitude, position.coords.longitude);
   }
 
   handleDemo (e) {

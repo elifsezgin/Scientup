@@ -7,7 +7,8 @@ const GroupListItem = ({ title, imageUrl, groupId }) => {
     width: "350px",
     height: "250px",
     filter: "brightness(90%)",
-    backgroundImage: `url(${imageUrl})`
+    backgroundImage: `url(${imageUrl})`,
+    borderRadius: "10px"
   };
   return (
     <Link className='link' to={`groups/${groupId}`}>
