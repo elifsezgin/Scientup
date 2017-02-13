@@ -75,7 +75,7 @@ class Welcome extends React.Component {
           </div>
           <div className='welcome-definitions'>
             <div className='welcome-title'>Browse now</div><br/>
-            <div className='welcome-definition'>Your first time? Sign in from <strong className="welcome-links"><a href="#signup">here</a></strong>. Already a member? Log in from <strong className="welcome-links"><a href="#login">here</a></strong>. Don't have time? Log in as a guest user from <strong className="welcome-links" onClick={this.handleDemo}>here</strong>.</div>
+            <div className='welcome-definition'>Click <strong className="welcome-links" onClick={this.handleDemo}>here</strong> to login as a guest user.</div>
           </div>
           </div>
         </div>

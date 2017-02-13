@@ -3,6 +3,7 @@
     text-decoration: none;
     color: #000;
   }
+  text-decoration: underline;
   color: #000;
 }
 
@@ -23,10 +24,13 @@
   align-items: center;
   justify-content: center;
 }
+.flex-column:nth-of-type(2n+1) {
+  background-color: $light-gray;
+}
 
 .welcome-definitions {
   width: 50%;
-  margin: 100px;
+  margin: 50px 100px 50px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
