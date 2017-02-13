@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getLocation: (lat, lon) => dispatch(getLocation(lat, lon))
+  getLocation: (lat, lon) => dispatch(getLocation(lat, lon)),
+  login: (user) => dispatch(login(user))
 });
 
 export default connect(

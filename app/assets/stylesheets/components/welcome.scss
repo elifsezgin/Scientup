@@ -1,0 +1,53 @@
+.welcome-links {
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  color: #000;
+}
+
+.welcome-links:hover {
+  cursor: pointer;
+}
+
+.welcome-definitions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-definitions {
+  width: 50%;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.images {
+  width: 50%;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.welcome-definition {
+  font-size: 15px;
+  font-weight: 300;
+}

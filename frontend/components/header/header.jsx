@@ -98,11 +98,13 @@ class Header extends React.Component {
   render() {
     const dropdownClass = 'dropdown ' + this.state.displayDropdown;
     const loginLink = (<button
+      id="login"
       key={1}
       className='header-buttons'
       onClick={this.openModal.bind(this, 'login')}>Log in</button>);
 
     const signupLink = (<button
+      id="signup"
       key={2}
       className='header-buttons'
       onClick={this.openModal.bind(this, 'signup')}>Sign up</button>);
