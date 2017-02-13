@@ -55,6 +55,6 @@ export const deleteMember = (id, data) => (
 export const getLocation = (lat, lon) => (
   $.ajax({
     method: 'GET',
-    url: `http://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&sensor=true`
+    url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&sensor=true`
   })
 );

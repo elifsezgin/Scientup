@@ -11,7 +11,7 @@ class MainHeader extends React.Component {
     const welcomeVideo = (
       <div>
       <video className="welcome-video" autoPlay muted loop>
-        <source src="http://res.cloudinary.com/datsbxfvs/video/upload/v1484242056/welcome_video_gpslvo.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/datsbxfvs/video/upload/v1484242056/welcome_video_gpslvo.mp4" type="video/mp4" />
         Could not find video.
       </video>
       <div  className="welcome">

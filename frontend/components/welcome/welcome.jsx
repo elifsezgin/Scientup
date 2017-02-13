@@ -48,12 +48,12 @@ class Welcome extends React.Component {
               <div className='welcome-definition'>Search for the Science topics you are interested. Join the community to see and join their events.</div>
             </div>
             <div className='images'>
-              <img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1486962799/group_1_qhgdug.png'></img>
+              <img src='https://res.cloudinary.com/datsbxfvs/image/upload/v1486962799/group_1_qhgdug.png'></img>
             </div>
           </div>
           <div className='flex-column'>
           <div className='images'>
-            <img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1486963001/thinking-head_xwokyt.png'></img>
+            <img src='https://res.cloudinary.com/datsbxfvs/image/upload/v1486963001/thinking-head_xwokyt.png'></img>
           </div>
           <div className='welcome-definitions'>
             <div className='welcome-title'>Create your science community</div><br/>
@@ -66,12 +66,12 @@ class Welcome extends React.Component {
               <div className='welcome-definition'>Search for the events nearby. Join the events or create your own event for your community.</div>
             </div>
             <div className='images'>
-              <img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1486963184/calendar_mrko0h.png'></img>
+              <img src='https://res.cloudinary.com/datsbxfvs/image/upload/v1486963184/calendar_mrko0h.png'></img>
             </div>
           </div>
           <div className='flex-column'>
           <div className='images'>
-            <img src='http://res.cloudinary.com/datsbxfvs/image/upload/v1486963347/login-square-arrow-button-outline_owouhu.png'></img>
+            <img src='https://res.cloudinary.com/datsbxfvs/image/upload/v1486963347/login-square-arrow-button-outline_owouhu.png'></img>
           </div>
           <div className='welcome-definitions'>
             <div className='welcome-title'>Browse now</div><br/>

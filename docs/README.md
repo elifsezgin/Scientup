@@ -2,7 +2,7 @@
 
 Check out the live version [here][heroku]!
 
-[heroku]: http://scientup.herokuapp.com
+[heroku]: https://scientup.herokuapp.com
 
 ## Minimum Viable Product
 
