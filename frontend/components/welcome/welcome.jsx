@@ -17,11 +17,12 @@ class Welcome extends React.Component {
   }
 
   getLocation() {
-      if (navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(this.showPosition);
-      } else {
-       return(<p>Geolocation is not supported by this browser.</p>);
-      }
+    if (navigator.geolocation) {
+      // Switch to https and then comment out these lines;
+    //  navigator.geolocation.getCurrentPosition(this.showPosition);
+    } else {
+    //  return(<p>Geolocation is not supported by this browser.</p>);
+    }
   }
 
   showPosition(position)  {
