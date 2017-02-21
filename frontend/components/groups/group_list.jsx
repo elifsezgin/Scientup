@@ -14,7 +14,7 @@ class GroupList extends React.Component {
   render () {
     window.props = this.props;
     const groups = this.props.groups.map(data => (
-      <GroupListItem key={data.id} title={data.title} imageUrl={data.image_url} groupId={data.id} />
+      <GroupListItem key={data.id} title={data.title} imageUrl={data.image_url} groupId={data.id} memberCount={data.member_count} eventCount={data.event_count} />
       )
     );
     return (

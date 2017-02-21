@@ -31,5 +31,12 @@ class Group < ActiveRecord::Base
     self.organizers.include(user)
   end
 
+  def member_count
+    self.members.count
+  end
+
+  def event_count
+    self.events.count
+  end
 
 end
