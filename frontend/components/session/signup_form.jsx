@@ -8,7 +8,8 @@ class signupForm extends React.Component {
     this.state = {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      show_email: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
