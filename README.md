@@ -1,4 +1,4 @@
-[scientuplive]: https://scientup.com
+[scientuplive]: https://www.scientup.com
 
 <img src='https://res.cloudinary.com/datsbxfvs/image/upload/v1484891473/logo_jxknxl.png' width='200px'/>
 

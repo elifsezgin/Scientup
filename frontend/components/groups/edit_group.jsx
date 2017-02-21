@@ -43,9 +43,7 @@ class EditGroup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.image_url) {
-      this.props.addImage(this.state.image_url);
-    } else {
+    if (!this.state.image_url) {
       this.state.image_url = "http://res.cloudinary.com/datsbxfvs/image/upload/v1487701020/2560x1440-black-solid-color-background_skmvjw.jpg";
     }
     const group = Object.assign({}, this.state);
