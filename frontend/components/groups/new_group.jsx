@@ -27,12 +27,15 @@ class NewGroup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const group = Object.assign({}, this.state);
-    if (this.state.image_url) {
-      this.props.addImage(this.state.newImage);
+    if (!this.state.image_url) {
+      this.state.image_url = "http://res.cloudinary.com/datsbxfvs/image/upload/v1487701020/2560x1440-black-solid-color-background_skmvjw.jpg";
     }
-    this.props.createGroup({ group }).then((data)=>
-      this.props.router.push(`groups/${data.id}`));
+    const group = Object.assign({}, this.state);
+    this.props.createGroup({group}).then((data)=> {
+      this.props.router.push(`groups/${data.group.id}`);
+      console.log(data.id);
+      console.log(data.group.id);
+    });
   }
 
   update(property) {

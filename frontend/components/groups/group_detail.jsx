@@ -31,6 +31,7 @@ class GroupDetail extends React.Component {
 
   componentDidMount () {
     this.props.requestGroup(parseInt(this.props.params.groupId));
+    this.props.clearErrors();
   }
 
   deleteGroup () {
