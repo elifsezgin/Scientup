@@ -44,7 +44,11 @@ class signupForm extends React.Component {
   }
 
   update(property) {
-  return e => this.setState({ [property]: e.target.value });
+  if (property === 'show_email') {
+    return e => this.setState({ [property]: !this.state[property] });
+  } else {    
+    return e => this.setState({ [property]: e.target.value });
+  }
   }
 
   renderErrors() {
@@ -80,6 +84,11 @@ class signupForm extends React.Component {
                value={this.state.password}
                placeholder="Enter Password"
                onChange={this.update('password')}/>
+             <div className="show-email-question-flex"><div className="show-email-question">Do you want your email to be shown to others?</div>
+        <input className="auth-form-checkbox"
+               type="checkbox"
+               value={this.state.show_email}
+               onChange={this.update('show_email')}/></div>
         <div className='demo-login-signup-container'>
         <input className="auth-form-button"
                type="submit"

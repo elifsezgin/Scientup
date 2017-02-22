@@ -118,23 +118,22 @@ class GroupDetail extends React.Component {
             <div key={idx} className='people'>
               <div className='event-detail-event-datetime'>{member.username}
               </div>
-              <div className='event-detail-event-datetime'>{member.email}
+              <div className='event-detail-event-datetime'>{member.show_email ? member.email : null}
               </div>
-
               </div>
           ))}</div>
       );
       case 'organizators':
       return (
-        <div className='people'>{this.props.group.organizers.map((organizator, idx) => (
-            <div key={idx} className='event-detail-participation'>
+        <div>{this.props.group.organizers.map((organizator, idx) => (
+            <div key={idx} className='people'>
               <div className='event-detail-event-datetime'>{organizator.username}
               </div>
-              <div className='event-detail-event-datetime'>{organizator.email}
+              <div className='event-detail-event-datetime'>{organizator.show_email ? organizator.email : null}
               </div>
-
-              </div>
+            </div>
           ))}</div>
+
       );
       case 'upcoming':
         return (<EventListContainer group={this.props.group} display={'upcoming'} />);

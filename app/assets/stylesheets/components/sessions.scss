@@ -58,12 +58,34 @@ body {
   display: block;
   margin-left: 40px;
   // background-color: $light-gray;
+  font-family: 'Source Sans Pro', sans-serif;
   color:$dark-gray;
   font-weight:400;
   font-size:16px;
   strong:hover {
     cursor: pointer;
   }
+}
+
+.show-email-question {
+  display: block;
+  font-family: 'Source Sans Pro', sans-serif;
+  color:$dark-gray;
+  font-weight:400;
+  font-size:16px;
+}
+
+.show-email-question-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+}
+
+.auth-form-checkbox {
+  width: 40px;
+  height: 40px;
+  position: relative;
 }
 
 input:focus {
