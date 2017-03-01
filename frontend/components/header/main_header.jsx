@@ -10,7 +10,7 @@ class MainHeader extends React.Component {
     window.propsheader = this.props;
     const welcomeVideo = (
       <div>
-      <video className="welcome-video" autoPlay muted loop>
+      <video className="welcome-video" alt="Credit: Kurzgesagt" autoPlay muted loop>
         <source src="https://res.cloudinary.com/datsbxfvs/video/upload/v1484242056/welcome_video_gpslvo.mp4" type="video/mp4" />
         Could not find video.
       </video>
