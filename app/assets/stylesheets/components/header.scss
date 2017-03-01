@@ -17,11 +17,6 @@
   margin-left: 20px;
 }
 
-.welcome-message {
-  color: $orange;
-}
-
-
 .welcome-video {
   width: 100%;
   height: auto;
@@ -64,6 +59,7 @@
   list-style: none;
   margin-top: 8px;
   display: flex;
+  align-items: center;
   margin-right: 20px;
 }
 

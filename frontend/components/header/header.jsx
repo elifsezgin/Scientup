@@ -15,7 +15,6 @@ class Header extends React.Component {
 
     this.handleLogout = this.handleLogout.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-    this.welcomeMessage = this.welcomeMessage.bind(this);
     this.redirect = this.redirect.bind(this);
     this.createGroup = this.createGroup.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -38,14 +37,6 @@ class Header extends React.Component {
     this.props.router.push(route);
   }
 
-  welcomeMessage () {
-    if (this.props.currentUser) {
-      return(
-        <p className='welcome-message'>Welcome {this.props.currentUser.username}!</p>
-      );
-    }
-  }
-
   createGroup () {
     if (this.props.currentUser) {
       return (
@@ -53,7 +44,6 @@ class Header extends React.Component {
         <button className='header-buttons margin-auto'>
             <div className='margin-auto'>Create Group </div>
             <i className="fa fa-plus plus-icon" aria-hidden="true"></i>
-
         </button>
       </Link>
       );
@@ -151,7 +141,6 @@ class Header extends React.Component {
     <div>
       <header className='header-container'>
         <Link className='link' to="/home"><img className='logo' src={window.assets.logo}></img></Link>
-        {this.welcomeMessage()}
         <ul className='header-list'>
           <li>{this.redirecthome()}</li>
           <li>{this.createGroup()}</li>
