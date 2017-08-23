@@ -29,7 +29,8 @@
     "npm": "3.9.3"
   },
   "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.prod.js"
+    "heroku-postbuild": "webpack --config webpack.config.prod.js",
+    "start": "webpack --watch"
   },
   "repository": {
     "type": "git",

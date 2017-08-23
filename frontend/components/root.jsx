@@ -29,7 +29,6 @@ const Root = ({store}) => {
       replace('/home');
     }
   };
-
   return (
     <Provider store={store} >
       <Router history={hashHistory} >
