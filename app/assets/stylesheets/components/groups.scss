@@ -14,7 +14,6 @@
   margin: 10px;
 
   h3 {
-
     position: relative;
     top: 50px;
     left: 30px;
@@ -106,6 +105,7 @@
   color: $white;
   background-color: $blue;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .delete-edit {

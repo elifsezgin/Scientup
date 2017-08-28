@@ -62,20 +62,20 @@ user7 = User.create!(username: 'Daminus', email: 'daminus@email.com', password:'
 user8 = User.create!(username: 'Gael', email: 'gael@email.com', password:'password', show_email: false)
 user9 = User.create!(username: 'Ken', email: 'ken@email.com', password:'password', show_email: false)
 user10 = User.create!(username: 'Antony', email: 'antony@email.com', password:'password', show_email: false)
-user11 = User.create!(username: 'Riza', email: 'riza@email.com', password:'password', show_email: false)
-user12 = User.create!(username: 'Neil', email: 'neil@email.com', password:'password', show_email: false)
-user13 = User.create!(username: 'Matt', email: 'matt@email.com', password:'password', show_email: false)
-user14 = User.create!(username: 'Daniel', email: 'daniel@email.com', password:'password', show_email: false)
-user15 = User.create!(username: 'Hugh', email: 'hugh@email.com', password:'password', show_email: false)
-user16 = User.create!(username: 'Rachel', email: 'rachel@email.com', password:'password', show_email: false)
-user17 = User.create!(username: 'John', email: 'john@email.com', password:'password', show_email: false)
-user18 = User.create!(username: 'Marc', email: 'marc@email.com', password:'password', show_email: false)
-user19 = User.create!(username: 'Claire', email: 'claire@email.com', password:'password', show_email: false)
-user20 = User.create!(username: 'Charlene', email: 'charlene@email.com', password:'password', show_email: false)
-user21 = User.create!(username: 'Brad', email: 'brad@email.com', password:'password', show_email: false)
-user22 = User.create!(username: 'Jack', email: 'jack@email.com', password:'password', show_email: false)
-user23 = User.create!(username: 'Chloe', email: 'chloe@email.com', password:'password', show_email: false)
-user24 = User.create!(username: 'Hakan', email: 'hakan@email.com', password:'password', show_email: false)
+user11 = User.create!(username: 'Riza', email: 'riza@email.com', password:'password', show_email: true)
+user12 = User.create!(username: 'Neil', email: 'neil@email.com', password:'password', show_email: true)
+user13 = User.create!(username: 'Matt', email: 'matt@email.com', password:'password', show_email: true)
+user14 = User.create!(username: 'Daniel', email: 'daniel@email.com', password:'password', show_email: true)
+user15 = User.create!(username: 'Hugh', email: 'hugh@email.com', password:'password', show_email: true)
+user16 = User.create!(username: 'Rachel', email: 'rachel@email.com', password:'password', show_email: true)
+user17 = User.create!(username: 'John', email: 'john@email.com', password:'password', show_email: true)
+user18 = User.create!(username: 'Marc', email: 'marc@email.com', password:'password', show_email: true)
+user19 = User.create!(username: 'Claire', email: 'claire@email.com', password:'password', show_email: true)
+user20 = User.create!(username: 'Charlene', email: 'charlene@email.com', password:'password', show_email: true)
+user21 = User.create!(username: 'Brad', email: 'brad@email.com', password:'password', show_email: true)
+user22 = User.create!(username: 'Jack', email: 'jack@email.com', password:'password', show_email: true)
+user23 = User.create!(username: 'Chloe', email: 'chloe@email.com', password:'password', show_email: true)
+user24 = User.create!(username: 'Hakan', email: 'hakan@email.com', password:'password', show_email: true)
 user25 = User.create!(username: 'Alara', email: 'alara@email.com', password:'password', show_email: false)
 user26 = User.create!(username: 'Arel', email: 'arel@email.com', password:'password', show_email: false)
 user27 = User.create!(username: 'Aron', email: 'aron@email.com', password:'password', show_email: false)
@@ -330,7 +330,7 @@ Membership.create!(user_id: user29.id, group_id: group12.id)
 event1 = Event.create!(
 name: "Evolution Conference Part 1",
 description: "The conference is the premier opportunity for the presentation and discussion of scientific research in all areas of evolutionary biology. It features numerous contributed talks (14 min. 'regular' and 5 min. 'lightning'), multiple society-selected symposia with invited speakers on specific themes, several poster sessions, and keynote addresses including from the Presidents of each society and one or more public outreach seminars. We welcome all people interested.",
-date: "2017-03-12",
+date: "2017-09-12",
 time: "2000-01-01 18:00:00",
 lat: 37.792231,
 lng: -122.397562,
@@ -340,7 +340,7 @@ group_id: group2.id)
 event2 = Event.create!(
 name: "Big Data Talks",
 description: "We will be talking about handling Big Data. We welcome all people interested.",
-date: "2017-03-24",
+date: "2017-09-24",
 time: "2000-01-01 18:00:00",
 lat: 37.798268,
 lng: -122.403377,
@@ -348,7 +348,7 @@ address: '371 Broadway',
 group_id: group7.id)
 event3 = Event.create!(
 name: "Deep Learning Summit", description: "Discover advances in deep learning algorithms and methods from the world's leading innovators. Learn from industry experts in speech & pattern recognition, neural networks, image analysis and NLP. Explore how deep learning will impact healthcare, manufacturing, search & transportation.",
-date: "2017-03-27",
+date: "2017-09-27",
 time: "2000-01-01 18:00:00",
 lat: 37.794516,
 lng: -122.411393,
@@ -362,7 +362,7 @@ description: "We will be discussing the innovations of 2017. The topics we will 
 • Energy harvesting and storage
 • Bioelectronics for applications in healthcare
 • Internet of Things and large-area electronic sensor technologies",
-date: "2017-03-27",
+date: "2017-09-27",
 time: "2000-01-01 18:00:00",
 lat: 37.787901,
 lng: -122.4291201,
@@ -371,7 +371,7 @@ group_id: group8.id)
 event5 = Event.create!(
 name: "Young Researcher Workshop on Geometry, Mechanics, and Control",
 description: "Our goal is to bring together young researchers working in geometry, mechanics and control theory and to offer a platform to present the results of their research to an international audience.",
-date: "2017-03-24",
+date: "2017-09-24",
 time: "2000-01-01 18:00:00",
 lat: 37.794516,
 lng: -122.411393,
@@ -380,7 +380,7 @@ group_id: group9.id)
 event6 = Event.create!(
 name: "Model theory and applications",
 description: "This conference will be dedicated to model theory and its applications to algebra and other branches of mathematics. It will be the opportunity to review some lines of the subject as well as to focus on its recent developments. The panel of invited speakers reflects the large diversity of applications.",
-date: "2017-03-27",
+date: "2017-09-27",
 time: "2000-01-01 18:00:00",
 lat: 37.787901,
 lng: -122.4291201,
@@ -390,7 +390,7 @@ group_id: group9.id)
 event7 = Event.create!(
 name: "Conference of Materials Chemistry",
 description: "The 'MC' conference series has provided a showcase for materials chemistry for two decades, and is the flagship event of the RSC's Materials Chemistry Division",
-date: "2017-03-24",
+date: "2017-09-24",
 time: "2000-01-01 18:00:00",
 lat: 37.798268,
 lng: -122.403377,
@@ -400,7 +400,7 @@ group_id: group10.id)
 event8 = Event.create!(
 name: "Ruby on Rails Tuesday",
 description: "We will be teaching Ruby on Rails and coding together. We welcome all levels.",
-date: "2017-03-24",
+date: "2017-09-24",
 time: "2000-01-01 18:00:00",
 lat: 37.792231,
 lng: -122.397562,
@@ -410,7 +410,7 @@ group_id: group1.id)
 event9 = Event.create!(
 name: "Javascript Friday",
 description: "We will be teaching Javascript and coding together. We welcome all levels.",
-date: "2017-03-27",
+date: "2017-09-27",
 time: "2000-01-01 18:00:00",
 lat: 37.794516,
 lng: -122.411393,
@@ -420,7 +420,7 @@ group_id: group1.id)
 event10 = Event.create!(
 name: "React Thursday",
 description: "We will be teaching React and coding together. We welcome all levels.",
-date: "2017-03-07",
+date: "2017-09-07",
 time: "2000-01-01 18:00:00",
 lat: 37.794516,
 lng: -122.411393,
@@ -431,7 +431,7 @@ group_id: group1.id)
 event11 = Event.create!(
 name: "Evolution Conference Part 2",
 description: "The conference is the premier opportunity for the presentation and discussion of scientific research in all areas of evolutionary biology. It features numerous contributed talks (14 min. 'regular' and 5 min. 'lightning'), multiple society-selected symposia with invited speakers on specific themes, several poster sessions, and keynote addresses including from the Presidents of each society and one or more public outreach seminars. We welcome all people interested.",
-date: "2017-03-12",
+date: "2017-09-12",
 time: "2000-01-01 18:00:00",
 lat: 37.792231,
 lng: -122.397562,
@@ -442,7 +442,7 @@ group_id: group2.id)
 event12 = Event.create!(
 name: "Next Generation Sequencing Analysis",
 description: "Next generation sequencing (NGS), massively parallel or deep sequencing are related terms that describe a DNA sequencing technology which has revolutionised genomic research. Using NGS an entire human genome can be sequenced within a single day. In contrast, the previous Sanger sequencing technology, used to decipher the human genome, required over a decade to deliver the final draft. Although in genome research NGS has mostly superseded conventional Sanger sequencing, it has not yet translated into routine clinical practice. We will be talking about handling NGS analysis. We welcome all people interested.",
-date: "2017-03-24",
+date: "2017-09-24",
 time: "2000-01-01 18:00:00",
 lat: 37.7690861,
 lng: -122.4467702,
@@ -451,7 +451,7 @@ group_id: group3.id)
 
 event13 = Event.create!(
 name: "Drosophila Open Lab", description: "We will be hosting our first open lab, we welcome all genetics students that are interested in fly labs.",
-date: "2017-03-27",
+date: "2017-09-27",
 time: "2000-01-01 18:00:00",
 lat: 37.424105999999999,
 lng: -122.1660756,
