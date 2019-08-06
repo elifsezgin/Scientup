@@ -29,11 +29,12 @@ const Root = ({store}) => {
       replace('/home');
     }
   };
+
   return (
     <Provider store={store} >
       <Router history={hashHistory} >
         <Route path="/" component={App}>
-          <IndexRedirect to='/home' />
+          <IndexRedirect to='/' />
           <Route
             path='welcome'
             component={ WelcomeContainer }

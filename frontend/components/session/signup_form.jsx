@@ -27,7 +27,7 @@ class signupForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.signup({ user }).then(()=> {
       this.props.closeModal();
-      this.redirect('/');
+      this.redirect('/home');
     });
   }
 
@@ -37,6 +37,7 @@ class signupForm extends React.Component {
   }
 
   handleDemo (e) {
+    e.preventDefault();
     this.props.login({user: {username: 'Guest', password: 'password'}}).then(() => {
       this.props.closeModal();
     this.redirect('/home');

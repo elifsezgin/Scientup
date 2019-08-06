@@ -58,6 +58,6 @@ class Home extends React.Component {
     );
   }
 }
-// <GroupListContainer />
+
 
 export default Home;
